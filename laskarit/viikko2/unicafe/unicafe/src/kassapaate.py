@@ -45,3 +45,6 @@ class Kassapaate:
 
     def kassassa_rahaa_euroina(self):
         return self.kassassa_rahaa / 100
+
+    def myytyja_lounaita(self):
+        return self.edulliset + self.maukkaat

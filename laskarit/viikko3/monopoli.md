@@ -16,7 +16,7 @@
     Ruutu "1" <|-- "1..30" Katu
     Sattuma_yhteismaa "1" -- "1..32" Kortti
     Pelinappula "1" -- "1" Pelaaja
-    Pelaaja "1" -- "22" Katu : omistaa
+    Pelaaja "0" -- "22" Katu : omistaa
     Pelaaja "2..8" -- "1" Monopolipeli
     Pelaaja "1" -- "1" Kassa
 

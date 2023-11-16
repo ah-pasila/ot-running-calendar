@@ -4,8 +4,8 @@
  classDiagram
     Monopolipeli "1" -- "2" Noppa
     Monopolipeli "1" -- "1" Pelilauta
-    Monopolipeli "1" -- "1" Aloitusruutu
-    Monopolipeli "1" -- "1" Vankila
+    Monopolipeli "1" -- "1" Aloitusruutu : sijainti
+    Monopolipeli "1" -- "1" Vankila : sijainti
     Pelilauta "1" -- "40" Ruutu
     Ruutu "1" -- "1" Ruutu: seuraava
     Ruutu "1" -- "0..8" Pelinappula
@@ -28,9 +28,10 @@
         +toiminto()
     }
 
+    note for Katu "Talojen lkm 0-5. 5. talo = hotelli"
     class Katu{
         String kadun_nimi
-        int talojen_maara
+        int talojen_lkm
         +toiminto()
     }
 

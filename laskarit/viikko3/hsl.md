@@ -16,6 +16,6 @@ sequenceDiagram
     ratikka6->>kallen_kortti: vahenna_arvoa(1.5)
     kallen_kortti-->main: return True
     main->>bussi244: osta_lippu(kallen_kortti,2)
-    bussi22->>kallen_kortti: vahenna_arvoa(3.5)
+    bussi244->>kallen_kortti: vahenna_arvoa(3.5)
     kallen_kortti-->bussi244: False
 ```

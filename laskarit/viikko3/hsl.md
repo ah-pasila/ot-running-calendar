@@ -1,2 +1,16 @@
 sequenceDiagram
-    main
+    main->>rautatientori: Lataajalaite()
+    main->>ratikka6: Lukijalaite()
+    main->>bussi244: Lukijalaite()
+    main->>laitehallinto: lisaa_lataaja(rautatietori)
+    main->>laitehallinto: lisaa_lukija(ratikka6)
+    main->>laitehallinto: lisaa_lukija(bussi24)
+    main->>lippu_luukku: Kioski()
+    main->>lippu_luukku: osta_matkakortti("Kalle")
+    main->>rautatietori: lataa_arvoa(kallen_kortti, 3)
+    rautatietori->>kallen_kortti: (3)
+    kallen_kortti-->rautatietori: (3)
+    main->>ratikka6: osta_lippu(kallen_kortti, 0)
+    kallen_kortti-->ratikka6: vahenna_arvoa(1.5)
+    kmain->>bussi244: osta_lippu(kallen_kortti,2)
+    kallen_kortti-->bussi244: False

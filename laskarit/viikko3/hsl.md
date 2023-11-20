@@ -1,3 +1,6 @@
+## HSL-kaavio
+
+```mermaid
 sequenceDiagram
     main->>rautatientori: Lataajalaite()
     main->>ratikka6: Lukijalaite()
@@ -14,3 +17,4 @@ sequenceDiagram
     kallen_kortti-->ratikka6: vahenna_arvoa(1.5)
     kmain->>bussi244: osta_lippu(kallen_kortti,2)
     kallen_kortti-->bussi244: False
+```

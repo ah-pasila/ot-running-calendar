@@ -1,0 +1,2 @@
+source = src
+omit = src/**/__init__.py,src/tests/**

@@ -2,7 +2,7 @@
 
 ```mermaid
 sequenceDiagram
-    main->>rautatientori: Lataajalaite()
+    main->>rautatietori: Lataajalaite()
     main->>ratikka6: Lukijalaite()
     main->>bussi244: Lukijalaite()
     main->>laitehallinto: lisaa_lataaja(rautatietori)

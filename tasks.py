@@ -6,7 +6,11 @@ def foo(ctx):
 
 @task
 def start(ctx):
-    ctx.run("python3 src/index.py", pty=True)
+    ctx.run("python3 src/ui/ui.py", pty=True)
+
+@task
+def test(ctx):
+    ctx.run("poetry run pytest src", pty=True)
 
 @task
 def coverage(ctx):

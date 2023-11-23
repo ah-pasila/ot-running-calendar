@@ -37,6 +37,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "invoke"
+version = "2.2.0"
+description = "Pythonic task execution"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "packaging"
 version = "23.2"
 description = "Core utilities for Python packages"
@@ -86,13 +94,14 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "b4245326f31b3c5a382f5a4c3cfe3911caae9258b1d60c0dea568b70f21ffe5e"
+content-hash = "f549e2927172b01179a28b90af248b55745473ec7b2b9bd899b335600f6f38a5"
 
 [metadata.files]
 colorama = []
 coverage = []
 exceptiongroup = []
 iniconfig = []
+invoke = []
 packaging = []
 pluggy = []
 pytest = []

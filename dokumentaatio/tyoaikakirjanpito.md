@@ -4,4 +4,4 @@
 |------|------|------|
 |13.11.|0.5|alustava vaatimusmäärittely, dokumentit gittiin|
 |19.11.|1.5|koodausympäristön rakentelu, sovelluksen pohjan luonnostelua|
-|21.11.|1.0|koodausrympäristön rakentamista, sovelluksen pohtimista|
+|21.11.|2.0|koodausrympäristön rakentamista, sovelluksen pohjan luonnin jatkoa|

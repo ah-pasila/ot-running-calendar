@@ -1,4 +1,4 @@
-#Base for running plan
+# Base for running plan object
 
 class Plan:
     def __init__(self):

@@ -1,13 +1,14 @@
-from plan import Plan
-from calendar import Calendar
+from entities.plan import Plan
+from entities.run_calendar import Run_calendar
 
 class Ui:
 
     def __init__self(self, ui_view):
         self.ui_view = None
-
+    
     def execute(self):
         while True:
+            self.running_calendar.print_calendar_current_month()
             option = input("Plan a run - enter 1 // Print running calendar - enter 2 // Escape - enter any other key: ")
             if option == "1":
                 print("Add your coming run")
@@ -23,4 +24,5 @@ class Ui:
 
 userinterface = Ui()
 userinterface.running_plan = Plan()
+userinterface.running_calendar = Calendar()
 userinterface.execute()

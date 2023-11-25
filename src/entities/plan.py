@@ -1,4 +1,4 @@
-# Base for running plan object
+# Base for running plan containing future runs
 
 class Plan:
     def __init__(self):

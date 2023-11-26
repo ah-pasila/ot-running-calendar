@@ -2,12 +2,9 @@
 
 from calendar import calendar
 from datetime import date
-
+#Pyydetty ChatGPT:ltä neuvoja luokan toimintaan, siivottu käyttämätön konstruktori
 class Run_calendar:
     
-    def __init__(self):
-        None
-
     def print_current_year_calendar(self):
         today = date.today()
         year = today.year

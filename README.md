@@ -1,6 +1,6 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-Teen juoksukalenterin, jolla voi suunnitella tulevia juoksuharjoituksia. Sovelluksen on toteutettu Helsingin yliopiston ohjelmistotekniikan kurssilla. 
+Teen juoksukalenterin, jolla voi suunnitella ja kalenteroida tulevia juoksuharjoituksia. Sovellus on toteutettu Helsingin yliopiston ohjelmistotekniikan kurssilla. 
 
 ## Dokumentaatio
 

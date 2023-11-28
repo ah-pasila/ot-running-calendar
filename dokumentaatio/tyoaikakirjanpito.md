@@ -7,3 +7,6 @@
 |21.11.|2.0|koodausrympäristön rakentamista, sovelluksen pohjan luonnin jatkoa|
 |25.11.|2.0|Koodin rakenteen jäsentelyä, sovelluksen koodipohjan siistimistä, kalenteriluokan lisäys|
 |26.11.|1.0|Koodin toimivuuden rakentamista, kun rakenne pilkottu eri kansioihin|
+|28.11.|0.5|arkkitehtuuridokumentaation/luokkakaavion teko|
+
+Yhteensä 7.5 tuntia

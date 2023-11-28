@@ -1,13 +1,13 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-Teen juoksukalenterin, jolla voi suunnitella tulevia **juoksuharjoituksia**. 
+Teen juoksukalenterin, jolla voi suunnitella tulevia juoksuharjoituksia. Sovelluksen on toteutettu Helsingin yliopiston ohjelmistotekniikan kurssilla. 
 
-Linkki [laskuharjoituksiin](https://github.com/ah-pasila/ot-running-calendar/tree/master/laskarit)
+## Dokumentaatio
 
 Linkki [vaatimusmäärittelyyn](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 Linkki [arkkitehtuuridokumentaatioon](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-Linkki [työaikakirjanpitoon](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/tyoaikakirjanpito.md)
-
 Linkki [muutoslokiin](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/changelog.md)
+
+Linkki [työaikakirjanpitoon](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/tyoaikakirjanpito.md)

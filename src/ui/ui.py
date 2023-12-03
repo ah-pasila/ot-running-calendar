@@ -1,14 +1,16 @@
+#Käyttöliittymä
+#Kysytty ChatGPT:ltä neuvoa koodin rakenteen ja virheiden korjaamiseen -> löytyi mm. typo luokan määrittelystä ja execute.metodista
+
 from services.run_calendar_service import Run_calendar_service
-#Kysytty ChatGPT:ltä neuvoa koodin virheiden korjaamiseen -> löytyi typo luokan määrittelystä ja execute.metodista#
-class Ui:
+
+class UI:
 
     def __init__(self):
-        userinterface = Ui()
-        self.run_service = Run_calendar_service()
-    
+        self.run_calender = Run_calendar_service()
+
     def execute(self):
         print("Welcome to the running calendar")
-        userinterface.run_service.running_calendar.print_current_year_calendar()
+        self.run_calender.print_calendar()
         while True:
             option = input("Plan a run - enter 1 // Print running calendar - enter 2 // Escape - enter any other key: ")
             if option == "1":
@@ -16,12 +18,9 @@ class Ui:
                 date_part = input("Set date: ")
                 description_part = input("Set description of the run (easy/moderate/hard): ")
                 length_part = input("Set length in km: ")
-                userinterface.run_service.add_run(date_part, description_part, length_part)
+                self.run_calender.add_run(date_part, description_part, length_part)
             elif option =="2":
-                userinterface.run_service.print_runs()
+                self.run_calender.print_runs()
             else:
                 print("Goodbye")
                 break
-
-userinterface = Ui()
-userinterface.execute()

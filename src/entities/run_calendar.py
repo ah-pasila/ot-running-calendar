@@ -1,14 +1,28 @@
 # Base for calendar
+# Pyydetty ChatGPT:ltä neuvoja luokan toimintaan
 
-from calendar import calendar
+import calendar
 from datetime import date
-#Pyydetty ChatGPT:ltä neuvoja luokan toimintaan
+
 class Run_calendar:
 
     def __init__(self):
         pass
         
-    def print_current_year_calendar(self):
+    def print_current_month_calendar(self):
+        today = date.today()
+        current_year = today.year
+        current_month = today.month
+        print(calendar.month(current_year, current_month))
+
+    def print_next_month_calendar(self):
         today = date.today()
         year = today.year
-        print(calendar(year))
+        month = today.month
+        if month == 12:
+            year = year + 1
+            month = 1
+        else:
+            year == year
+            month = month + 1
+        print(calendar.month(year, month))

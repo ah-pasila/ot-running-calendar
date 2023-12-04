@@ -8,9 +8,22 @@ class UI:
     def __init__(self):
         self.run_calender = Run_calendar_service()
 
-    def execute(self):
-        print("Welcome to the running calendar")
-        self.run_calender.print_calendar()
+    def add_user_info(self):
+        print("Welcome to add user info")
+        username = input("Set username: ")
+        self.run_calender.add_username(username)
+        password = input("Set password (length min 8 character): ")
+        self.run_calender.add_password(password)
+        gender = input("Gender (F-M-Other): ")
+        self.run_calender.add_gender(gender)
+        age = input("Age (in years): ")
+        self.run_calender.add_age(age)
+    
+    def add_plan(self):
+        print("Welcome to the running calendar!")
+        print("It's time to plan your runs for the coming months:\n")
+        self.run_calender.print_current_month_calendar()
+        self.run_calender.print_next_month_calendar()
         while True:
             option = input("Plan a run - enter 1 // Print running calendar - enter 2 // Escape - enter any other key: ")
             if option == "1":

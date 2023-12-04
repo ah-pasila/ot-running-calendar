@@ -1,9 +1,10 @@
 #Luokan typoista ja ongelmista kysytty neuvoa chatGPT:ltä
 
-from entities.plan import Plan
 from entities.user import User
+from entities.plan import Plan
 from entities.run_calendar import Run_calendar
-from datetime import date
+from repositories import user_repository
+from repositories import plan_repository
 
 class Run_calendar_service:
 
@@ -11,10 +12,13 @@ class Run_calendar_service:
         self.user = User("test1", "test2")
         self.run_plan = Plan()
         self.running_calendar = Run_calendar()
+        self.user_repositoritory = user_repository
+        self.plan_repositoritory = plan_repository
 
-    def add_run(self, day: str, description:str, length: str):
+    def add_run(self, day: str, description:str, length: int):
         self.run_plan.add_run(day = day, description = description, length = length)
-
+#        return self.plan_repositoritory.create()
+    
     def add_username(self, name: str):
         self.user.add_username(username = name)
 

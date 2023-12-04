@@ -9,4 +9,5 @@
 |26.11.|1.0|Koodin toimivuuden rakentamista, kun rakenne pilkottu eri kansioihin|
 |28.11.|0.5|arkkitehtuuridokumentaation/luokkakaavion teko|
 |03.12.|1.5|Koodin rakenteen korjailua, peruskoodin korjaamista toimivaksi
-Yhteensä 9.0 tuntia
+|04.12.|1.5|Koodin laajentamista (käyttäjätiedot), tietokantatallenuksen aloitus
+Yhteensä 10.5 tuntia

@@ -13,8 +13,8 @@ class User:
         self.username = username
 
     def add_password(self, password: str):
-        self.password = password       
-        
+        self.password = password
+
     def add_gender(self, gender: str):
         self.gender = gender
 

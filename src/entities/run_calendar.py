@@ -4,11 +4,12 @@
 import calendar
 from datetime import date
 
+
 class Run_calendar:
 
     def __init__(self):
         pass
-        
+
     def print_current_month_calendar(self):
         today = date.today()
         current_year = today.year

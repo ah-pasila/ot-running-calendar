@@ -1,35 +1,41 @@
-#Luokan typoista ja ongelmista kysytty neuvoa chatGPT:ltä
+# Luokan typoista ja ongelmista kysytty neuvoa chatGPT:ltä
 
 from entities.user import User
 from entities.plan import Plan
 from entities.run_calendar import Run_calendar
-from repositories import user_repository
-from repositories import plan_repository
+from repositories.user_repository import (
+    User_repository as default_user_repository
+)
+
+from repositories.plan_repository import (
+    Plan_repository as default_plan_repository
+)
+
 
 class Run_calendar_service:
 
-    def __init__(self):
+    def __init__(
+        self,
+        user_repository=default_user_repository,
+        plan_repository=default_plan_repository
+    ):
         self.user = User("test1", "test2")
         self.run_plan = Plan()
         self.running_calendar = Run_calendar()
-        self.user_repositoritory = user_repository
-        self.plan_repositoritory = plan_repository
+        self._user_repository = user_repository
+        self._plan_repository = plan_repository
 
-    def add_run(self, day: str, description:str, length: int):
-        self.run_plan.add_run(day = day, description = description, length = length)
-#        return self.plan_repositoritory.create()
-    
-    def add_username(self, name: str):
-        self.user.add_username(username = name)
+    def add_run(self, day: str, description: str, length: int):
+        return self._plan_repository.add_plan(self, day=day, description=description, length=length)
 
-    def add_password(self, password: str):
-        self.user.add_password(password = password)
+    def add_user(self, username: str, password: str):
+        return self._user_repository.add_user(self, username=username, password=password)
 
     def add_gender(self, gender: str):
-        self.user.add_gender(gender = gender)
+        self.user.add_gender(gender=gender)
 
     def add_age(self, age: int):
-        self.user.add_age(age = age)
+        self.user.add_age(age=age)
 
     def print_runs(self):
         self.run_plan.print_runs()
@@ -39,3 +45,6 @@ class Run_calendar_service:
 
     def print_next_month_calendar(self):
         self.running_calendar.print_next_month_calendar()
+
+
+run_calendar_service = Run_calendar_service()

@@ -14,10 +14,10 @@ class UI:
         username = input("Set username: ")
         password = input("Set password (length min 8 character): ")
         self.run_calendar.add_user(username, password)
-        gender = input("Gender (F-M-Other): ")
-        self.run_calendar.add_gender(gender)
-        age = input("Age (in years): ")
-        self.run_calendar.add_age(age)
+ #       gender = input("Gender (F-M-Other): ")
+ #       self.run_calendar.add_gender(gender)
+ #       age = input("Age (in years): ")
+ #       self.run_calendar.add_age(age)
 
     def add_plan(self):
         print("Welcome to the running calendar!")

@@ -1,4 +1,4 @@
-# Luokan typoista ja ongelmista kysytty neuvoa chatGPT:ltä
+# Luokan typoista ja ongelmista kysytty neuvoa chatGPT:ltä ja korjailtu virheitä tämän perusteella
 
 from entities.user import User
 from entities.plan import Plan
@@ -19,7 +19,6 @@ class Run_calendar_service:
         user_repository=default_user_repository,
         plan_repository=default_plan_repository
     ):
-        self.user = User("test1", "test2")
         self.run_plan = Plan()
         self.running_calendar = Run_calendar()
         self._user_repository = user_repository
@@ -29,7 +28,8 @@ class Run_calendar_service:
         return self._plan_repository.add_plan(self, day=day, description=description, length=length)
 
     def add_user(self, username: str, password: str):
-        return self._user_repository.add_user(self, username=username, password=password)
+        user = User(username, password)
+        return self._user_repository.add_user(self, user)
 
     def add_gender(self, gender: str):
         self.user.add_gender(gender=gender)

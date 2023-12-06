@@ -3,6 +3,7 @@
 from entities.user import User
 from database_connection import get_database_connection
 
+
 class User_repository:
     def __init__(self, connection):
         self._connection = connection

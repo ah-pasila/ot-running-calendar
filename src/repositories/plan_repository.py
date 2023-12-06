@@ -18,4 +18,5 @@ class Plan_repository:
 
         return day, description, length
 
+
 user_repository = Plan_repository(get_database_connection())

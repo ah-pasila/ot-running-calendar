@@ -8,6 +8,7 @@
 |25.11.|2.0|Koodin rakenteen jäsentelyä, sovelluksen koodipohjan siistimistä, kalenteriluokan lisäys|
 |26.11.|1.0|Koodin toimivuuden rakentamista, kun rakenne pilkottu eri kansioihin|
 |28.11.|0.5|arkkitehtuuridokumentaation/luokkakaavion teko|
-|03.12.|1.5|Koodin rakenteen korjailua, peruskoodin korjaamista toimivaksi
-|04.12.|1.5|Koodin laajentamista (käyttäjätiedot), tietokantatallenuksen aloitus
-Yhteensä 10.5 tuntia
+|03.12.|1.5|Koodin rakenteen korjailua, peruskoodin korjaamista toimivaksi|
+|04.12.|1.5|Koodin laajentamista (käyttäjätiedot), tietokantatallenuksen aloitus|
+|05.12.|3.5|Yritetty saada Poetry-komennot ja tietokantatallennus toimimaan|
+Yhteensä 14.0 tuntia

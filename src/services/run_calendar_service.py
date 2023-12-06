@@ -25,11 +25,12 @@ class Run_calendar_service:
         self._plan_repository = plan_repository
 
     def add_run(self, day: str, description: str, length: int):
-        return self._plan_repository.add_plan(self, day=day, description=description, length=length)
+        self.run_plan.add_run(day=day, description=description, length=length)
+#        return self._plan_repository.add_plan(self, day=day, description=description, length=length)
 
     def add_user(self, username: str, password: str):
         user = User(username, password)
-        return self._user_repository.add_user(self, user)
+#        return self._user_repository.add_user(self, user)
 
     def add_gender(self, gender: str):
         self.user.add_gender(gender=gender)

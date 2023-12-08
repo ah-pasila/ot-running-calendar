@@ -1,13 +1,13 @@
-from entities.plan import Plan
+from entities.run import Run
 from entities.user import User
 from database_connection import get_database_connection
 
 
-class Plan_repository:
+class Run_repository:
     def __init__(self, connection):
         self._connection = connection
 
-    def add_plan(self, day: str, description: str, length: int):
+    def add_run(self, day: str, description: str, length: int):
         cursor = self._connection.cursor()
         cursor.execute(
             "INSERT INTO plans (day, description, length) VALUES (?, ?)",
@@ -19,4 +19,4 @@ class Plan_repository:
         return day, description, length
 
 
-user_repository = Plan_repository(get_database_connection())
+run_repository = Run_repository(get_database_connection())

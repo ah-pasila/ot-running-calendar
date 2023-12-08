@@ -1,6 +1,8 @@
 # Käyttöliittymä
 # Kysytty ChatGPT:ltä neuvoa koodin rakenteen ja virheiden korjaamiseen -> löytyi mm. typo luokan määrittelystä ja execute.metodista
 
+import calendar
+from datetime import date
 from services.run_calendar_service import Run_calendar_service
 
 
@@ -14,16 +16,25 @@ class UI:
         username = input("Set username: ")
         password = input("Set password (length min 8 character): ")
         self.run_calendar.add_user(username, password)
-#        gender = input("Gender (F-M-Other): ")
-#        self.run_calendar.add_gender(gender)
-#        age = input("Age (in years): ")
-#        self.run_calendar.add_age(age)
+        gender = input("Gender (F-M-Other): ")
+        self.run_calendar.add_gender(gender)
+        age = input("Age (in years): ")
+        self.run_calendar.add_age(age)
 
     def add_plan(self):
         print("Welcome to the running calendar!")
         print("It's time to plan your runs for the coming months:\n")
-        self.run_calendar.print_current_month_calendar()
-        self.run_calendar.print_next_month_calendar()
+        today = date.today()
+        current_year = today.year
+        current_month = today.month
+        print(calendar.month(current_year, current_month))
+        if current_month == 12:
+            year = current_year + 1
+            month = 1
+        else:
+            year = current_year
+            next_month = month + 1
+        print(calendar.month(year, next_month))
         while True:
             option = input(
                 "Plan a run - enter 1 // Print running calendar - enter 2 // Escape - enter any other key: ")

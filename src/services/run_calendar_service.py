@@ -25,7 +25,7 @@ class Run_calendar_service:
     def add_user(self, username: str, password: str, gender: str, age: int):
         user = User(username, password, gender, age)
         return self._user_repository.add_user(self, user, gender, age)
-    
+
     def add_run(self, day: str, description: str, length: int):
         run = Run(day, description, length)
         return self._run_repository.add_run(self, run)

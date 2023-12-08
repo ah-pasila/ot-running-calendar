@@ -12,5 +12,6 @@
 |04.12.|1.5|Koodin laajentamista (käyttäjätiedot), tietokantatallenuksen aloitus|
 |05.12.|3.5|Yritetty saada Poetry-komennot ja tietokantatallennus toimimaan|
 |06.12.|1.5|Poetry saatu toimimaan Cubblin puolella, pylint ja autopep8 käyttöön, pre-release Githubiin|
-Yhteensä 15.5 tuntia
+|08.12.|1.0|Koodin rakenteen siistimistä|
+Yhteensä 16.5 tuntia
 

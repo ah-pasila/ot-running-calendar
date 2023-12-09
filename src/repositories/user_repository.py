@@ -9,17 +9,17 @@ class User_repository:
     def __init__(self, connection):
         self._connection = connection
 
-    def add_user(self, user, gender, age):
-        hash_password = generate_password_hash(user.password)
+    def add_user(self, user):
+        password = generate_password_hash(user.password)
         cursor = self._connection.cursor()
         cursor.execute(
-            'INSERT INTO users (username, hash_password, gender, age) VALUES (?, ?)',
-            (user.username, hash_password, user.gender, user.age)
+            'INSERT INTO users (username, password, gender, age) VALUES (?, ?, ?, ?)',
+            (user.username, password, user.gender, user.age)
         )
 
         self._connection.commit()
 
-        return user.username, user.password, user.username, user.password
+        return user
 
 
 user_repository = User_repository(get_database_connection())

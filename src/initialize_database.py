@@ -25,7 +25,9 @@ def create_tables(connection):
     cursor.execute('''
         create table users (
             username text primary key,
-            password text
+            password text,
+            gender text,
+            age int
         );
     ''')
 
@@ -33,7 +35,8 @@ def create_tables(connection):
         create table plans (
             day text primary key,
             description text,
-            length int
+            length int,
+            user text
         );
     ''')
 

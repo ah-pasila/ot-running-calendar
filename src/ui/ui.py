@@ -29,10 +29,11 @@ class UI:
         if current_month == 12:
             year = current_year + 1
             month = 1
+            print(calendar.month(year, month))
         else:
             year = current_year
             next_month = month + 1
-        print(calendar.month(year, next_month))
+            print(calendar.month(year, next_month))
         while True:
             option = input(
                 "Plan a run - enter 1 // Print running calendar - enter 2 // Escape - enter any other key: ")
@@ -45,7 +46,7 @@ class UI:
                 self.run_calendar.add_run(
                     date_part, description_part, length_part)
             elif option == "2":
-                self.run_calendar.print_runs()
+                print(self.run_calendar.return_runs())
             else:
                 print("Goodbye")
                 break

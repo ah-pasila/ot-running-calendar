@@ -5,8 +5,8 @@ class User:
     def __init__(self, username: str, password: str, gender: str, age: int):
         self.username = username
         self.password = password
-        self.gender = None
-        self.age = None
+        self.gender = gender
+        self.age = age
 
 # Username: username created by the user
 # Password: password created by the user

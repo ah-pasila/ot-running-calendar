@@ -46,7 +46,7 @@ class UI:
                 self.run_calendar.add_run(
                     date_part, description_part, length_part)
             elif option == "2":
-                self.run_calendar.return_runs()
+                self.run_calendar.print_runs()
             else:
                 print("Goodbye")
                 break

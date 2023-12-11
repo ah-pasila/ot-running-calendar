@@ -23,9 +23,10 @@ class Run_repository:
 
     def return_all_runs(self):
         cursor = self._connection.cursor()
-        cursor.execute("select * from users")
+        cursor.execute("select * from plans")
         rows = cursor.fetchall()
         for row in rows:
-            print(row)
+            print(row[0], row[1], row[2], row[3])
+
 
 run_repository = Run_repository(get_database_connection())

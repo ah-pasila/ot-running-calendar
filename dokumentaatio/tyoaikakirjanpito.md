@@ -14,4 +14,5 @@
 |06.12.|1.5|Poetry saatu toimimaan Cubblin puolella, pylint ja autopep8 käyttöön, pre-release Githubiin|
 |08.12.|1.0|Koodin rakenteen siistimistä|
 |09.12.|1.0|Tietokantayhteyden toimivuuden korjaus|
+|11.12.|1.0|Tietojen nouto tietokannasta kuntoon, docstring käyttöön|
 Yhteensä 17.5 tuntia

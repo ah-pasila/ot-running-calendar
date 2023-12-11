@@ -21,5 +21,9 @@ def coverage_report(ctx):
     ctx.run("coverage html", pty=True)
 
 @task
-def pylint(ctx):
+def lint(ctx):
     ctx.run("pylint src", pty=True)
+
+@task
+def initialize_db(ctx):
+    ctx.run("python3 src/initialize_database.py", pty=True)

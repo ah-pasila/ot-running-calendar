@@ -36,7 +36,7 @@ class Run_calendar_service:
         run = Run(day, description, length)
         return self._run_repository.add_run(run)
     
-    def return_runs(self):
+    def print_runs(self):
         return self._run_repository.return_all_runs()
 
 run_calendar_service = Run_calendar_service()

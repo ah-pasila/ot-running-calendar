@@ -4,6 +4,9 @@ from database_connection import get_database_connection
 
 
 class Run_repository:
+
+    """Class for saving run data and reading run data from SQL database
+    """
     def __init__(self, connection):
         self._connection = connection
 
@@ -22,7 +25,7 @@ class Run_repository:
         cursor = self._connection.cursor()
         cursor.execute("select * from users")
         rows = cursor.fetchall()
-        return list(rows)
-
+        for row in rows:
+            print(row)
 
 run_repository = Run_repository(get_database_connection())

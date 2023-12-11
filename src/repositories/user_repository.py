@@ -6,6 +6,9 @@ from werkzeug.security import generate_password_hash
 
 
 class User_repository:
+
+    """Class for saving user data and reading user data from SQL database
+    """
     def __init__(self, connection):
         self._connection = connection
 

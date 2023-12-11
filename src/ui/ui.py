@@ -1,4 +1,3 @@
-# Käyttöliittymä
 # Kysytty ChatGPT:ltä neuvoa koodin rakenteen ja virheiden korjaamiseen -> löytyi mm. typo luokan määrittelystä ja execute.metodista
 
 import calendar
@@ -7,7 +6,8 @@ from services.run_calendar_service import Run_calendar_service
 
 
 class UI:
-
+    """Class responsible for creating the ui of the service and starting the service
+    """
     def __init__(self):
         self.run_calendar = Run_calendar_service()
 

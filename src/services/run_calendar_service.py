@@ -14,6 +14,12 @@ from repositories.run_repository import (
 
 class Run_calendar_service:
 
+    """Class for creating Run calendar service
+        Args: 
+            user_repository: class responsible for data operations related to user
+            run_repository: class responsible for data operations related to user
+    """
+
     def __init__(
         self,
         user_repository=default_user_repository,

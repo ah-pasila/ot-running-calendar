@@ -1,4 +1,5 @@
-# Luokan typoista ja ongelmista kysytty neuvoa chatGPT:ltä ja korjailtu virheitä tämän perusteella
+""" ChatGPT was used to find typos and problemts from the code.
+"""
 
 from entities.user import User
 from entities.run import Run

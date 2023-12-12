@@ -9,3 +9,7 @@
 ### Viikko 3
 
 - Sovellukseen saatu perustoiminnallisuutta eli käyttäjätietojen anto ja juoksujen tallennus. Tietokantatallennuksen toteutus aloitettu, mutta ei vielä toimi.
+
+### Viikko 4
+
+- Toteutettu tietokantatallennus ja pystytään palauttamaan juoksun tiedot. Ensimmäiset testit toimivat. 

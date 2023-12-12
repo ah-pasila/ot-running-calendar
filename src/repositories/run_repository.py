@@ -27,6 +27,11 @@ class Run_repository:
         rows = cursor.fetchall()
         for row in rows:
             print(row[0], row[1], row[2], row[3])
+       
+    def return_run_count(self):
+        cursor = self._connection.cursor()
+        cursor.execute("select count(*) from plans")
+        return (len(cursor.fetchall()))
 
 
 run_repository = Run_repository(get_database_connection())

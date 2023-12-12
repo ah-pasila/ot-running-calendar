@@ -1,7 +1,6 @@
-# Class for run plan
 
 class RunPlan:
-    """Class for runplan
+    """Class for runplan, will be completed later
     """
     
     def __init__(self):

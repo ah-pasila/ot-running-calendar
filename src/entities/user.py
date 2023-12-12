@@ -1,4 +1,3 @@
-# Class for user information
 
 class User:
     """_Class for users of the application.

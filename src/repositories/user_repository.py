@@ -1,4 +1,5 @@
-# Kysytty ChatGPT:ltä neuvoa koodin toimimattomuuteen
+"""In this class, ChatGPT was used to find out reasons why code was not working
+"""
 
 from entities.user import User
 from database_connection import get_database_connection
@@ -23,6 +24,10 @@ class User_repository:
         self._connection.commit()
 
         return user
-
+    
+    def return_user_count(self):
+        cursor = self._connection.cursor()
+        cursor.execute("select count(*) from users")
+        return (len(cursor.fetchall()))
 
 user_repository = User_repository(get_database_connection())

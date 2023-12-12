@@ -23,7 +23,7 @@ Sovelluksessa tulee olemaan kirjautumisikkuna, käyttäjätunnuksen luonti-ikkun
   - Oletuksena näkyy kuluva viikko
   - Käyttäjä voi vaihtaa toiseen viikkoon
 - Käyttäjä voi valita viikonpäiville sopivat harjoitukset valmiista vaihtoehdoista sekä halutessaan lisätä niille keston ja matkan. 
-- Käyttäjä voi tallentaa viikkosuunnitelmansa, jolloin siihen on seuraavalla kerralla mahdollista palata.
+- Käyttäjä voi tallentaa viikkosuunnitelmansa, jolloin siihen on seuraavalla kerralla mahdollista palata. (Käyttäjä voi tallentaa juoksun tiedot tietokantaan ja palata tietoihin.)
 - Käyttäjä voi kirjautua ulos jäjestelmästä ohjelman sulkemisen yhteydessä.
 
 

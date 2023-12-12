@@ -15,4 +15,5 @@
 |08.12.|1.0|Koodin rakenteen siistimistä|
 |09.12.|1.0|Tietokantayhteyden toimivuuden korjaus|
 |11.12.|1.0|Tietojen nouto tietokannasta kuntoon, docstring käyttöön|
-Yhteensä 17.5 tuntia
+|12.12.|1.0|Testien päivitystä kuntoon, 2 ensimmäistä testiä toiminnassa, kommenttien siistimistä|
+Yhteensä 18.5 tuntia

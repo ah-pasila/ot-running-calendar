@@ -1,4 +1,5 @@
-# Kysytty ChatGPT:ltä neuvoa koodin rakenteen ja virheiden korjaamiseen -> löytyi mm. typo luokan määrittelystä ja execute.metodista
+""" In this class, ChatGPT was used to find problems in code structures and debugging
+""" 
 
 import calendar
 from datetime import date

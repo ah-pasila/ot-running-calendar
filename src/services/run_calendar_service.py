@@ -11,7 +11,7 @@ from repositories.user_repository import (
 from repositories.run_repository import (
     run_repository as default_run_repository
 )
-
+from werkzeug.security import check_password_hash
 
 class Run_calendar_service:
 
@@ -32,6 +32,14 @@ class Run_calendar_service:
     def add_user(self, username: str, password: str, gender: str, age: int):
         user = User(username, password, gender, age)
         return self._user_repository.add_user(user)
+
+    def login_user(self, given_username: str, given_password: str):
+        username = self._user_repository.return_username(given_username)
+        password = self._user_repository.return_password(given_password)
+        if given_username == username and check_password_hash(given_password, password):
+            return True
+        else:
+            return False
 
     def add_run(self, day: str, description: str, length: int):
         run = Run(day, description, length)

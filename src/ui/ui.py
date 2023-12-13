@@ -12,6 +12,37 @@ class UI:
     def __init__(self):
         self.run_calendar = Run_calendar_service()
 
+    def log_user_in(self):
+        print("Welcome to the running calendar!")
+        while True:
+            option = input(
+                "Login to the running calendar - enter 1 // Add new user - enter 2 // Escape - enter any other key: ")
+            if option == "1":
+                print("Enter username and password to login")
+                given_username = input("Enter username: ")
+                given_password = input("Enter password: ")
+                while True:
+                    if self.run_calendar.login_user(given_username, given_password) == True:
+                        print("Welcome to the running calendar!")
+                        self.add_plan()
+                        break
+                    else:
+                        print("Username or password was incorrect")
+                        option = input("Try again - enter 1 // Escape - enter any other key: ")
+                        if option == "1":
+                            self.log_user_in()
+                            break
+                        else:                
+                            print("Goodbye")
+                            break
+                break
+            elif option == "2":
+                self.add_user_info()
+                continue
+            else:
+                print("Goodbye")
+                break
+
     def add_user_info(self):
         print("Welcome to add user info")
         username = input("Set username: ")
@@ -21,7 +52,6 @@ class UI:
         self.run_calendar.add_user(username, password, gender, age)
 
     def add_plan(self):
-        print("Welcome to the running calendar!")
         print("It's time to plan your runs for the coming months:\n")
         today = date.today()
         current_year = today.year

@@ -16,4 +16,5 @@
 |09.12.|1.0|Tietokantayhteyden toimivuuden korjaus|
 |11.12.|1.0|Tietojen nouto tietokannasta kuntoon, docstring käyttöön|
 |12.12.|1.0|Testien päivitystä kuntoon, 2 ensimmäistä testiä toiminnassa, kommenttien siistimistä|
-Yhteensä 18.5 tuntia
+|13.12.|1.5|Login-kirjautumisen toteutuksen aloitus|
+Yhteensä 20.0 tuntia

@@ -13,8 +13,8 @@ class Run_repository:
     def add_run(self, run):
         cursor = self._connection.cursor()
         cursor.execute(
-            "INSERT INTO plans (day, description, length) VALUES (?, ?, ?)",
-            (run.day, run.description, run.length)
+            "INSERT INTO plans (day, description, length, username) VALUES (?, ?, ?, ?)",
+            (run.day, run.description, run.length, run.username)
         )
 
         self._connection.commit()
@@ -26,7 +26,7 @@ class Run_repository:
         cursor.execute("select * from plans")
         rows = cursor.fetchall()
         for row in rows:
-            print(row[0], row[1], row[2], row[3])
+            print(row[0], row[1], row[2], row[3], row[4])
        
     def return_run_count(self):
         cursor = self._connection.cursor()

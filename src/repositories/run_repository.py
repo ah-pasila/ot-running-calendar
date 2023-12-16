@@ -13,8 +13,8 @@ class Run_repository:
     def add_run(self, run):
         cursor = self._connection.cursor()
         cursor.execute(
-            "INSERT INTO plans (day, type, duration, length, username) VALUES (?, ?, ?, ?, ?)",
-            (run.day, run.type, run.duration, run.length, run.username)
+            "INSERT INTO plans (day, type, duration, length, description, username) VALUES (?, ?, ?, ?, ?, ?)",
+            (run.day, run.type, run.duration, run.length, run.description, run.username)
         )
 
         self._connection.commit()
@@ -24,12 +24,12 @@ class Run_repository:
 
     def return_all_runs(self, given_username: str):
         cursor = self._connection.cursor()
-        cursor.execute("select * from plans where username = ? and day > date('now')",
+        cursor.execute("select * from plans where username = ? and day >= date('now')",
                        (given_username,)
         )
         rows = cursor.fetchall()
         for row in rows:
-            print("date: ", row[1], " effort: ", row[2], " duration and length: ", row[3], " min ", row[4], " km")
+            print("date: ", row[1], " effort: ", row[2], " duration and length: ", row[3], " min ", row[4], " km ", row[5])
        
     def return_run_count(self, given_username: str):
         cursor = self._connection.cursor()
@@ -40,7 +40,7 @@ class Run_repository:
     
     def return_run_sum_min(self, given_username: str):
         cursor = self._connection.cursor()
-        res = cursor.execute("select sum(duration) from plans where username = ? and day > date('now')",
+        res = cursor.execute("select sum(duration) from plans where username = ? and day >= date('now')",
                              (given_username,)
         )
         total_sum = res.fetchone()[0]
@@ -48,7 +48,7 @@ class Run_repository:
     
     def return_run_sum_min_types(self, given_username: str, given_type: int):
         cursor = self._connection.cursor()
-        res = cursor.execute("select sum(duration) from plans where username = ? and type = ? and day > date('now')",
+        res = cursor.execute("select sum(duration) from plans where username = ? and type = ? and day >= date('now')",
                              (given_username, given_type,)
         )
         total_sum = res.fetchone()[0]
@@ -56,7 +56,7 @@ class Run_repository:
 
     def return_run_sum_km(self, given_username: str):
         cursor = self._connection.cursor()
-        res = cursor.execute("select sum(length) from plans where username = ? and day > date('now')",
+        res = cursor.execute("select sum(length) from plans where username = ? and day >= date('now')",
                              (given_username,)
         )
         total_sum = res.fetchone()[0]
@@ -69,7 +69,7 @@ class Run_repository:
         )
         rows = cursor.fetchall()
         for row in rows:
-            print("date: ", row[1], " effort: ", row[2], " duration and length: ", row[3], " min ", row[4], " km")
+            print("date: ", row[1], " effort: ", row[2], " duration and length: ", row[3], " min ", row[4], " km ", row[5])
 
     def return_run_count_period(self, given_username: str, datefrom: str, dateto: str):
         cursor = self._connection.cursor()
@@ -101,5 +101,14 @@ class Run_repository:
         )
         total_sum = res.fetchone()[0]
         return total_sum
+    
+    def remove_run(self, removedate):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "DELETE FROM plans WHERE day = ?",
+            (removedate,)
+        )
+
+        self._connection.commit()
 
 run_repository = Run_repository(get_database_connection())

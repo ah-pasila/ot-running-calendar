@@ -49,6 +49,14 @@ class User_repository:
         else:
             return False
 
+    def return_age(self, given_username):
+        cursor = self._connection.cursor()
+        res = cursor.execute("select age from users where username = ?",
+                       (given_username,)
+        )       
+        returning_age = res.fetchone()
+        return returning_age[0]
+
     def return_user_count(self):
         cursor = self._connection.cursor()
         cursor.execute("select count(*) from users")

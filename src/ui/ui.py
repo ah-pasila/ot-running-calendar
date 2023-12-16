@@ -67,16 +67,17 @@ class UI:
             print(calendar.month(year, next_month))
         while True:
             option = input(
-                "Plan a run - enter 1 // Print running calendar - enter 2 // Print statistics - enter 3 // Escape - enter any other key: ")
+                "Plan a run - enter 1 // Print running calendar - enter 2 // Print statistics - enter 3 // Remove run - enter 4 // Escape - enter any other key: ")
             if option == "1":
                 print("Add your coming run")
                 date_part = input("Set date (YYYY-MM-DD): ")
-                type_part = input(
-                    "Define the intensity of the run\n1 - easy 60-70% / maximum heartrate\n2 - moderate 70-85%\n3 - hard 85-100 %\nSet run type 1, 2 or 3: ")
+                print("Define the intensity of the run\n1 - easy 60-70% / maximum heartrate, your max: ",self.run_calendar.return_max_hr(),"\n2 - moderate 70-85%\n3 - hard 85-100 %")
+                type_part = input("Set run type 1, 2 or 3: ")
                 duration_part = input("Set duration of the run in minutes: ")
-                length_part = input("Set expected length in kilometers: ")
+                length_part = input("Set expected length in kilometers (voluntary): ")
+                description_part = input("Set description of the run (voluntary): ")
                 self.run_calendar.add_run(
-                    date_part, type_part, duration_part, length_part, "")
+                    date_part, type_part, duration_part, length_part, description_part, "")
             elif option == "2":
                 selection = input("Show all future runs - enter 1 // Select time period - enter 2 //  Escape - enter any other key: ")
                 if selection == "1":
@@ -107,6 +108,9 @@ class UI:
                     print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
                 else:
                     continue
+            elif option == "4":
+                removedate = input("Enter date from which plan is removed (YYYY-MM-DD): ")
+                self.run_calendar.remove_run(removedate)
             else:
                 self.run_calendar.logout_user()
                 print("Goodbye")

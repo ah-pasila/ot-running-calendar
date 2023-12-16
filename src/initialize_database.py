@@ -39,6 +39,7 @@ def create_tables(connection):
             type INT NOT NULL,
             duration INT NOT NULL,
             length INTEGER,
+            description TEXT,
             username TEXT
         );
     ''')

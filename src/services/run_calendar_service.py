@@ -44,10 +44,13 @@ class Run_calendar_service:
     def logout_user(self):
         self.login_status = False
 
-    def add_run(self, day: str, type: str, duration: str, length: int, username: str):
+    def add_run(self, day: str, type: str, duration: str, length: int, description: str, username: str):
         username = self.current_user.username
-        run = Run(day, type, duration, length, username)
+        run = Run(day, type, duration, length, description, username)
         return self._run_repository.add_run(run)
+    
+    def remove_run(self, day: str):
+        self._run_repository.remove_run(day)
     
     def return_all_runs(self):
         username = self.current_user.username
@@ -90,6 +93,10 @@ class Run_calendar_service:
     def return_sum_of_runs_km_period(self, datefrom: str, dateto: str):
         username = self.current_user.username
         return self._run_repository.return_run_sum_km_period(username, datefrom, dateto)
-
+    
+    def return_max_hr(self):
+        username = self.current_user.username
+        max_hr = 220 - self._user_repository.return_age(username)
+        return max_hr
 
 run_calendar_service = Run_calendar_service()

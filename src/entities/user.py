@@ -1,6 +1,6 @@
 
 class User:
-    """_Class for users of the application.
+    """Class for users of the application.
 
     Attributes:
         username: username created by the user

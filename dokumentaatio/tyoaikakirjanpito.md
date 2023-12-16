@@ -17,5 +17,6 @@
 |11.12.|1.0|Tietojen nouto tietokannasta kuntoon, docstring käyttöön|
 |12.12.|1.0|Testien päivitystä kuntoon, 2 ensimmäistä testiä toiminnassa, kommenttien siistimistä|
 |13.12.|1.5|Login-kirjautumisen toteutuksen aloitus|
-|15.12.|1|Login-kirjautumisen toteutuksen jatko|
-|Yhteensä|21.0|tuntia|
+|15.12.|1.0|Login-kirjautumisen toteutuksen jatko|
+|16.12.|5.0|Login toimintaan, käyttäjälle saataville juoksutilastot, turhan RunPlan-luokan poisto|
+|Yhteensä|26.0|tuntia|

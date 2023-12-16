@@ -10,8 +10,9 @@ class Run:
 
     """
    
-    def __init__(self, day=None, description=None, length=None, username=None):
+    def __init__(self, day=None, type=None, duration=None, length=None, username=None):
         self.day = day
-        self.description = description
+        self.type = type
+        self.duration = duration
         self.length = length
         self.username = username

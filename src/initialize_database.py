@@ -23,20 +23,23 @@ def create_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        create table users (
-            username text primary key,
-            password text,
-            gender text,
-            age int
+        CREATE TABLE users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL,
+            gender TEXT,
+            age INTEGER
         );
     ''')
 
     cursor.execute('''
-        create table plans (
-            day text primary key,
-            description text,
-            length int,
-            username text
+        CREATE TABLE plans (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            day TEXT NOT NULL,
+            type INT NOT NULL,
+            duration INT NOT NULL,
+            length INTEGER,
+            username TEXT
         );
     ''')
 

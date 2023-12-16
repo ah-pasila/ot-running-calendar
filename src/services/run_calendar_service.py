@@ -3,7 +3,6 @@
 
 from entities.user import User
 from entities.run import Run
-from entities.run_plan import RunPlan
 from repositories.user_repository import (
     user_repository as default_user_repository
 )
@@ -11,7 +10,6 @@ from repositories.user_repository import (
 from repositories.run_repository import (
     run_repository as default_run_repository
 )
-from werkzeug.security import check_password_hash
 
 class Run_calendar_service:
 
@@ -46,12 +44,52 @@ class Run_calendar_service:
     def logout_user(self):
         self.login_status = False
 
-    def add_run(self, day: str, description: str, length: int, username: str):
+    def add_run(self, day: str, type: str, duration: str, length: int, username: str):
         username = self.current_user.username
-        run = Run(day, description, length, username)
+        run = Run(day, type, duration, length, username)
         return self._run_repository.add_run(run)
     
-    def print_runs(self):
-        return self._run_repository.return_all_runs()
+    def return_all_runs(self):
+        username = self.current_user.username
+        return self._run_repository.return_all_runs(username)
+    
+    def return_number_of_runs(self):
+        username = self.current_user.username
+        return self._run_repository.return_run_count(username)
+
+    def return_sum_of_runs_min(self):
+        username = self.current_user.username
+        return self._run_repository.return_run_sum_min(username)
+    
+    def return_sum_of_runs_min_type(self, type: int):
+        username = self.current_user.username
+        type = type
+        return self._run_repository.return_run_sum_min_types(username, type)
+
+    def return_sum_of_runs_km(self):
+        username = self.current_user.username
+        return self._run_repository.return_run_sum_km(username)
+
+    def return_all_runs_period(self, datefrom: str, dateto: str):
+        username = self.current_user.username
+        return self._run_repository.return_all_runs_period(username, datefrom, dateto)
+
+    def return_number_of_runs_period(self, datefrom: str, dateto: str):
+        username = self.current_user.username
+        return self._run_repository.return_run_count_period(username, datefrom, dateto)
+
+    def return_sum_of_runs_min_period(self, datefrom: str, dateto: str):
+        username = self.current_user.username
+        return self._run_repository.return_run_sum_min_period(username, datefrom, dateto)
+    
+    def return_sum_of_runs_min_type_period(self, type: int, datefrom: str, dateto: str):
+        username = self.current_user.username
+        type = type
+        return self._run_repository.return_run_sum_min_types_period(username, type, datefrom, dateto)
+
+    def return_sum_of_runs_km_period(self, datefrom: str, dateto: str):
+        username = self.current_user.username
+        return self._run_repository.return_run_sum_km_period(username, datefrom, dateto)
+
 
 run_calendar_service = Run_calendar_service()

@@ -2,13 +2,11 @@
 
 ## Sovelluksen käyttötarkoitus
 
-Sovellusta käytetään henkilökohtaisen juoksukalenterin suunnitteluun. Päästäkseen suunnittelemaan juoksukalenteria, käyttäjän on kirjauduttava sovelluksen.
-Tämän jälkeen käyttäjä merkitsee omaan viikkokalenteriinsa tulevan viikon harjoituksensa eri vaihtoehdoista (juoksu/pyöräily/kävely/uinti/lihaskunto/lihashuolto/muu).  (x; käyttäjä voi antaa tiedot tulevista juoksuharjoituksista)
-Käyttäjä koostaa harjoitusviikon lisäämällä halutut harjoitukset ja niiden pituuden/keston. Sovellus laskee arvion kertyvistä viikkokilometreistä/harjoitustunneista sekä erikseen nimenomaan juoksusta kertyvän harjoitteluajan ja matkan. 
+Sovellusta käytetään henkilökohtaisen juoksukalenterin suunnitteluun. Päästäkseen suunnittelemaan juoksukalenteria, käyttäjän on kirjauduttava sovelluksen (x). Tämän jälkeen käyttäjä merkitsee omaan viikkokalenteriinsa tulevan viikon harjoituksensa eri vaihtoehdoista (juoksu/pyöräily/kävely/uinti/lihaskunto/lihashuolto/muu) (osin x; toteutus vain juoksun osalta). Käyttäjä koostaa harjoitusviikon lisäämällä halutut harjoitukset ja niiden pituuden/keston (x; tiedot annetaan päivämäärn tasolla). Sovellus laskee arvion kertyvistä viikkokilometreistä/harjoitustunneista sekä erikseen nimenomaan juoksusta kertyvän harjoitteluajan ja matkan (x, toiminnallisuudet tehty pääosin, mutta vain juoksun osalta). 
 
 ## Käyttäjät
 
-Alussa sovelluksella on vain peruskäyttäjiä. Erillinen admin-rooli lisätään tarvittaessa myöhemmin.
+Alussa sovelluksella on vain peruskäyttäjiä (x, sovelluksella yhdenlaisia käyttäjiä). Erillinen admin-rooli lisätään tarvittaessa myöhemmin.
 
 ## Käyttöliittymä
 
@@ -16,7 +14,7 @@ Sovelluksessa tulee olemaan kirjautumisikkuna, käyttäjätunnuksen luonti-ikkun
 
 ## Perustoiminnot
 
-- Käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan (x; voi antaa käyttäjätunnuksen ja salasanan)
+- Käyttäjä voi luoda järjestelmään käyttäjätunnuksen ja salasanan (x)
   - Molempien oltava vähintään 8-merkkisiä, lisäksi käyttäjätunnuksen oltava ainutkertainen.
 - Käyttäjä voi kirjautua järjestelmään määrittelemällään käyttäjätunnuksella ja salasanalla.
 - Kirjautumisen jälkeen käyttäjä näkee tyhjän viikkonäkymän.

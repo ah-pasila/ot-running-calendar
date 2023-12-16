@@ -3,7 +3,7 @@
 
 from entities.user import User
 from database_connection import get_database_connection
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class User_repository:
@@ -24,24 +24,30 @@ class User_repository:
         self._connection.commit()
 
         return user
-    
-    def return_username(self, username):
+
+    def check_username_exists(self, given_username):
         cursor = self._connection.cursor()
-        cursor.execute("select * from users where username = ?",
-                       (username,)
+        res = cursor.execute("select username from users where username = ?",
+                       (given_username,)
         )
-        row = cursor.fetchone()
-        returning_username = row[1]
-        return returning_username
-    
-    def return_password(self, username):
+        returning_username = res.fetchone()
+        if returning_username and given_username == returning_username[0]:
+            return True
+        else:
+            return False
+
+    """In the check_username_exists method, ChatGPT was used to formulate the if & return parts properly"""
+
+    def check_password_correct(self, given_username, given_password):
         cursor = self._connection.cursor()
-        cursor.execute("select * from users where username = ?",
-                       (username)
-        )
-#        row = cursor.fetchone()
-        returning_password = next(cursor,[None])[1]
-        return returning_password
+        res = cursor.execute("select password from users where username = ?",
+                       (given_username,)
+        )       
+        returning_password = res.fetchone()
+        if returning_password and check_password_hash(returning_password[0], given_password):
+            return True
+        else:
+            return False
 
     def return_user_count(self):
         cursor = self._connection.cursor()

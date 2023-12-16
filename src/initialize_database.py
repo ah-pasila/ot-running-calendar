@@ -1,6 +1,7 @@
 from database_connection import get_database_connection
 
-# Taulujen poisto
+"""Class for initializing database including removing tables and setting up new tables
+"""
 
 
 def drop_tables(connection):
@@ -16,7 +17,6 @@ def drop_tables(connection):
 
     connection.commit()
 
-# Taulujen luonti
 
 
 def create_tables(connection):
@@ -36,11 +36,9 @@ def create_tables(connection):
             day text primary key,
             description text,
             length int,
-            user text
+            username text
         );
     ''')
-
-# Taulujen alustus eli poisto ja luonti
 
 
 def initialize_database():
@@ -51,3 +49,4 @@ def initialize_database():
 
 if __name__ == "__main__":
     initialize_database()
+    print("Database intitialized")

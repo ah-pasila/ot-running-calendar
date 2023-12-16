@@ -29,22 +29,22 @@ class Run_calendar_service:
         self._user_repository = user_repository
         self._run_repository = run_repository
         self.current_user = User("","","","")
+        self.login_status = False
 
     def add_user(self, username: str, password: str, gender: str, age: int):
         user = User(username, password, gender, age)
-        print(user.password)
         return self._user_repository.add_user(user)
 
     def login_user(self, given_username: str, given_password: str):
-        if self._user_repository.return_username(given_username) == True:
-            hashed_password = self._user_repository.return_password(given_username)
-            if check_password_hash(hashed_password, given_password):
-                self.current_user = User(given_username, "", "", "")
-                return True
-            else:
-                return False
-        else: 
+        if self._user_repository.check_username_exists(given_username) == True and self._user_repository.check_password_correct(given_username, given_password):
+            self.login_status = True
+            self.current_user = User(given_username, "", "", "")
+            return True
+        else:
             return False
+
+    def logout_user(self):
+        self.login_status = False
 
     def add_run(self, day: str, description: str, length: int, username: str):
         username = self.current_user.username

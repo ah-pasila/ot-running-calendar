@@ -26,7 +26,7 @@ class Run_repository:
         cursor.execute("select * from plans")
         rows = cursor.fetchall()
         for row in rows:
-            print(row[0], row[1], row[2], row[3], row[4])
+            print(row[0], row[1], row[2], row[3])
        
     def return_run_count(self):
         cursor = self._connection.cursor()

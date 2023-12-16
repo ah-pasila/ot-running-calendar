@@ -75,9 +75,10 @@ class UI:
                     "Set description of the run (easy/moderate/hard): ")
                 length_part = input("Set length in km: ")
                 self.run_calendar.add_run(
-                    date_part, description_part, length_part)
+                    date_part, description_part, length_part, "")
             elif option == "2":
                 self.run_calendar.print_runs()
             else:
+                self.run_calendar.logout_user()
                 print("Goodbye")
                 break

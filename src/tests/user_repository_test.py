@@ -8,7 +8,6 @@ class TestUserRepository(unittest.TestCase):
     def setUp(self, user_repository=default_user_repository):
         self.test_user_repository = user_repository
 
-    def test_adding_one_user(self):
-        self.test_user_repository.add_user(User("testuser", "testpassword", "F","25"))
+    def test_save_user_data_into_db(self):
+        self.test_user_repository.add_user(User("testuser", "testpassword", "f", 25))
         self.test_user_repository.return_user_count() == 1
-        

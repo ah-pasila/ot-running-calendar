@@ -1,7 +1,11 @@
-# Tietokantayhteyden luominen
-
 import os
 import sqlite3
+
+"""database_connection.py is used to create connection to the local DB
+
+    Returns:
+        connection: returns DB connection
+"""
 
 dirname = os.path.dirname(__file__)
 

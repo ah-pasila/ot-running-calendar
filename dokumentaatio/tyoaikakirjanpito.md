@@ -19,4 +19,5 @@
 |13.12.|1.5|Login-kirjautumisen toteutuksen aloitus|
 |15.12.|1.0|Login-kirjautumisen toteutuksen jatko|
 |16.12.|5.75|Login toimintaan, käyttäjälle saataville juoksutilastot ja mahdollisuus poistaa juoksuja, turhan RunPlan-luokan poisto|
-|Yhteensä|26.75|tuntia|
+|17.12.|3.5|Syötteen tarkistuksia käyttöön, koodin siistimistä|
+|Yhteensä|30.25|tuntia|

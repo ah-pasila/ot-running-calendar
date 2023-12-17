@@ -36,7 +36,7 @@ def create_tables(connection):
         CREATE TABLE plans (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             day TEXT NOT NULL,
-            type INT NOT NULL,
+            type TEXT NOT NULL,
             duration INT NOT NULL,
             length INTEGER,
             description TEXT,

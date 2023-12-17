@@ -11,7 +11,7 @@ from repositories.run_repository import (
     run_repository as default_run_repository
 )
 
-class Run_calendar_service:
+class RunCalendarService:
 
     """Class for creating Run calendar service
         Args: 
@@ -34,7 +34,7 @@ class Run_calendar_service:
         return self._user_repository.add_user(user)
 
     def login_user(self, given_username: str, given_password: str):
-        if self._user_repository.check_username_exists(given_username) == True and self._user_repository.check_password_correct(given_username, given_password):
+        if self.check_username(given_username) == True and self._user_repository.check_password_correct(given_username, given_password):
             self.login_status = True
             self.current_user = User(given_username, "", "", "")
             return True
@@ -43,6 +43,12 @@ class Run_calendar_service:
 
     def logout_user(self):
         self.login_status = False
+
+    def check_username(self, given_username):
+        if self._user_repository.check_username_exists(given_username) == True: 
+            return True
+        else:
+            return False
 
     def add_run(self, day: str, type: str, duration: str, length: int, description: str, username: str):
         username = self.current_user.username
@@ -99,4 +105,4 @@ class Run_calendar_service:
         max_hr = 220 - self._user_repository.return_age(username)
         return max_hr
 
-run_calendar_service = Run_calendar_service()
+run_calendar_service = RunCalendarService()

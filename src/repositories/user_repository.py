@@ -62,4 +62,12 @@ class User_repository:
         cursor.execute("select count(*) from users")
         return (len(cursor.fetchall()))
 
+    def remove_all_users(self):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "DELETE FROM users",
+        )
+
+        self._connection.commit()
+
 user_repository = User_repository(get_database_connection())

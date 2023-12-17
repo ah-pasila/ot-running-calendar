@@ -170,15 +170,21 @@ class UI:
             print("Number of planned runs: ", (self.run_calendar.return_number_of_runs()))
             print("Sum of planned runs (in minutes): ", self.run_calendar.return_sum_of_runs_min())
             print("Sum of planned runs (in kms): ", self.run_calendar.return_sum_of_runs_km())
-            share = 100*self.run_calendar.return_sum_of_runs_min_type(1)/self.run_calendar.return_sum_of_runs_min()
-            print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
+            try:
+                share = 100*self.run_calendar.return_sum_of_runs_min_type(1)/self.run_calendar.return_sum_of_runs_min()
+                print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
+            except:
+                print("Share of easy runs can not be calculated")
         elif selection == "2":
             datefrom = input("Enter starting date (YYYY-MM-DD): ")
             dateto = input("Enter end date (YYYY-MM-DD): ")
             print("Number of planned runs: ", (self.run_calendar.return_number_of_runs_period(datefrom, dateto)))
             print("Sum of planned runs (in minutes): ", self.run_calendar.return_sum_of_runs_min_period(datefrom, dateto))
             print("Sum of planned runs (in kms): ", self.run_calendar.return_sum_of_runs_km_period(datefrom, dateto))
-            share = 100*self.run_calendar.return_sum_of_runs_min_type_period(1, datefrom, dateto)/self.run_calendar.return_sum_of_runs_min_period(datefrom, dateto)
-            print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
+            try: 
+                share = 100*self.run_calendar.return_sum_of_runs_min_type_period(1, datefrom, dateto)/self.run_calendar.return_sum_of_runs_min_period(datefrom, dateto)
+                print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
+            except:
+                print("Share of easy runs can not be calculated")
         else:
             pass

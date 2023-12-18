@@ -30,11 +30,19 @@ class Run_repository:
         rows = cursor.fetchall()
         for row in rows:
             print("date: ", row[1], " effort: ", row[2], " duration and length: ", row[3], " min ", row[4], " km ", row[5])
+
        
     def return_run_count(self, given_username: str):
         cursor = self._connection.cursor()
         res = cursor.execute("SELECT * FROM plans WHERE username = ?",
                              (given_username,)
+        )
+        return (len(res.fetchall()))
+    
+           
+    def return_run_count_in_db(self):
+        cursor = self._connection.cursor()
+        res = cursor.execute("SELECT * FROM plans"
         )
         return (len(res.fetchall()))
     

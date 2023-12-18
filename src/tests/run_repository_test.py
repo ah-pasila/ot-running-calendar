@@ -18,6 +18,12 @@ class TestRunRepository(unittest.TestCase):
         self.test_run_repository.add_run(Run("2024-01-05", "2", 40, 5, "...","testuser"))
         self.test_run_repository.remove_run("2024-01-05")
         self.test_run_repository.return_run_count("testuser") == 1
+        
+    def test_remove_all_runs_works(self):
+        self.test_run_repository.add_run(Run("2024-01-01", "1", 40, 5, "...","testuser"))
+        self.test_run_repository.add_run(Run("2024-01-05", "2", 40, 5, "...","testuser"))
+        self.test_run_repository.remove_all_runs()
+        self.test_run_repository.return_run_count_in_db() == 0
 
     def test_get_users_run(self):
         self.test_run_repository.add_run(Run("2024-01-01", "1", 40, 5, "...","testuser1"))

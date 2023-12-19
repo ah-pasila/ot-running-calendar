@@ -105,4 +105,19 @@ class RunCalendarService:
         max_hr = 220 - self._user_repository.return_age(username)
         return max_hr
 
+    def return_easy_run_share(self):
+        username = self.current_user.username
+        try:
+            return 100*self._run_repository.return_run_sum_min_types(username, 1)/self._run_repository.return_run_sum_min(username)
+        except:
+            return 0.0
+
+    def return_easy_run_share_period(self, datefrom: str, dateto: str):
+        username = self.current_user.username
+        try:
+            return 100*self._run_repository.return_run_sum_min_types_period(username, 1, datefrom, dateto)/self._run_repository.return_run_sum_min_period(username, username, 1, datefrom, dateto)
+
+        except:
+            return 0.0
+
 run_calendar_service = RunCalendarService()

@@ -2,6 +2,7 @@
 """ 
 
 import calendar
+import datetime
 from datetime import date
 from services.run_calendar_service import RunCalendarService
 
@@ -108,7 +109,14 @@ class UI:
             elif option == "3":
                 self.show_statistics()
             elif option == "4":
-                removedate = input("Enter date from which plan is removed (YYYY-MM-DD): ")
+                while True:
+                    try:
+                        removedate = str(input("Enter date from which plan is removed (YYYY-MM-DD): "))
+                        if datetime.date.fromisoformat(removedate):
+                            break
+                        else: print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+                    except ValueError:
+                        print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
                 self.run_calendar.remove_run(removedate)
             else:
                 self.run_calendar.logout_user()
@@ -117,20 +125,27 @@ class UI:
 
     def add_run(self):
         print("Add your coming run")
-        date_part = str(input("Set date (YYYY-MM-DD): "))
-        
+        while True:
+            try:
+                date_part = str(input("Enter date (YYYY-MM-DD): "))
+                if datetime.date.fromisoformat(date_part):
+                    break
+                else: print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+            except ValueError:
+                print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+
         print("Define the intensity of the run\n1 - easy 60-70% / maximum heartrate, your max: ",
               self.run_calendar.return_max_hr(),"\n2 - moderate 70-85%\n3 - hard 85-100 %")
         
         while True:
-            type_part = str(input("Set run type 1, 2 or 3: "))
+            type_part = str(input("Enter run type 1, 2 or 3: "))
             if type_part in ("1","2","3"):
                     break
             else:
                 print("Type must be 1, 2 or 3")
         while True:
             try:
-                duration_part = int(input("Set duration of the run in minutes: "))
+                duration_part = int(input("Enter duration of the run in minutes: "))
                 if duration_part >= 1 and duration_part <= 3000:
                     break
                 else:
@@ -139,14 +154,14 @@ class UI:
                 print("Enter duration between 1-3000 minutes")
         while True:
             try:
-                length_part = int(input("Set expected length in kilometers: "))
+                length_part = int(input("Enter expected length in kilometers: "))
                 if (length_part >= 1 and length_part <= 200):
                     break
                 else:
                     print("Enter length between 0-200 kilometers")
             except ValueError:
                 print("Enter length between 0-200 kilometers")
-        description_part = str(input("Set description of the run (voluntary): "))
+        description_part = str(input("Enter description of the run (voluntary): "))
         self.run_calendar.add_run(date_part, type_part, duration_part, 
                                   length_part, description_part, "")
         
@@ -155,10 +170,24 @@ class UI:
         selection = input("Show all future runs - enter 1 // Select time period - enter 2 //  Escape - enter any other key: ")
         if selection == "1":
             print("All future runs: ")
-            print(self.run_calendar.return_all_runs())
+            print(self.run_calendar.return_all_runs_period())
         elif selection == "2":
-            datefrom = input("Enter starting date (YYYY-MM-DD): ")
-            dateto = input("Enter end date (YYYY-MM-DD): ")
+            while True:
+                try:
+                    datefrom = str(input("Enter starting date (YYYY-MM-DD): "))
+                    if datetime.date.fromisoformat(datefrom):
+                        break
+                    else: print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+                except ValueError:
+                    print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+            while True:
+                try:
+                    dateto= str(input("Enter end date (YYYY-MM-DD): "))
+                    if datetime.date.fromisoformat(dateto):
+                        break
+                    else: print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+                except ValueError:
+                    print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
             print(self.run_calendar.return_all_runs_period(datefrom, dateto))
         else:
             pass
@@ -170,21 +199,31 @@ class UI:
             print("Number of planned runs: ", (self.run_calendar.return_number_of_runs()))
             print("Sum of planned runs (in minutes): ", self.run_calendar.return_sum_of_runs_min())
             print("Sum of planned runs (in kms): ", self.run_calendar.return_sum_of_runs_km())
-            try:
-                share = 100*self.run_calendar.return_sum_of_runs_min_type(1)/self.run_calendar.return_sum_of_runs_min()
-                print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
-            except:
-                print("Share of easy runs can not be calculated")
+            share = self.run_calendar.return_easy_run_share
+            print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
         elif selection == "2":
-            datefrom = input("Enter starting date (YYYY-MM-DD): ")
-            dateto = input("Enter end date (YYYY-MM-DD): ")
+            while True:
+                try:
+                    datefrom = str(input("Enter starting date (YYYY-MM-DD): "))
+                    if datetime.date.fromisoformat(datefrom):
+                        break
+                    else: print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+                except ValueError:
+                    print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+
+            while True:
+                try:
+                    dateto= str(input("Enter end date (YYYY-MM-DD): "))
+                    if datetime.date.fromisoformat(dateto):
+                        break
+                    else: print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+                except ValueError:
+                    print("Enter date in correct format YYYY-MM-DD, e.g. 2024-01-30")
+            
             print("Number of planned runs: ", (self.run_calendar.return_number_of_runs_period(datefrom, dateto)))
             print("Sum of planned runs (in minutes): ", self.run_calendar.return_sum_of_runs_min_period(datefrom, dateto))
             print("Sum of planned runs (in kms): ", self.run_calendar.return_sum_of_runs_km_period(datefrom, dateto))
-            try: 
-                share = 100*self.run_calendar.return_sum_of_runs_min_type_period(1, datefrom, dateto)/self.run_calendar.return_sum_of_runs_min_period(datefrom, dateto)
-                print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
-            except:
-                print("Share of easy runs can not be calculated")
+            self.run_calendar.return_easy_run_share_period(datefrom, dateto)
+            print(f"Most of the running should be easy (type 1 runs), share of easy running minutes in your plan, %: {share: .1f}")
         else:
             pass

@@ -22,4 +22,5 @@
 |17.12.|4.5|Syötteen tarkistuksia käyttöön, koodin siistimistä, testien tekoa|
 |18.12.|1|Testien tekoa|
 |19.12.|1|Päivämäärien validointi, ui-siivous|
-|Yhteensä|33.25|tuntia|
+|20.12.|4.5|Koodin ja tiedostojen siistimistä, kommentointia|
+|Yhteensä|37.75|tuntia|

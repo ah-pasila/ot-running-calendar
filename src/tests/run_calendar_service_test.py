@@ -25,3 +25,4 @@ class TestRunCalendarService(unittest.TestCase):
     def test_return_login_status(self):
         self.test_run_calendar_service.login_user("testikayttaja", "testisala")
         self.assertEqual(self.test_run_calendar_service.login_status, True)
+

@@ -103,8 +103,7 @@ class UI:
             print(calendar.month(_year, _next_month))
         while True:
             _option = input(
-                "Plan a run - enter 1 // Print running calendar - enter 2 // Print statistics - enter 3 //\
-                    Remove run - enter 4 // Escape - enter any other key: ")
+                "Plan a run - enter 1 // Print running calendar - enter 2 // Print statistics - enter 3 // Remove run - enter 4 // Escape - enter any other key: ")
             if _option == "1":
                 self._add_run()
             elif _option == "2":
@@ -178,8 +177,7 @@ class UI:
 
     def _show_runs(self):
         _option = input(
-            "Show all future runs - enter 1 // Select time period - enter 2 //\
-                Escape - enter any other key: ")
+            "Show all future runs - enter 1 // Select time period - enter 2 // Escape - enter any other key: ")
         if _option == "1":
             print("All future runs: ")
             print(self.run_calendar.return_all_runs("", ""))
@@ -211,8 +209,7 @@ class UI:
     def _show_statistics(self):
         print("************** Running plan statistics **************")
         _option = input(
-            "Show statistics on all future runs - enter 1 // Select time period - enter 2 //\
-                Escape - enter any other key: ")
+            "Show statistics on all future runs - enter 1 // Select time period - enter 2 // Escape - enter any other key: ")
         if _option == "1":
             print("Number of planned runs: ",
                   (self.run_calendar.return_number_of_runs("", "")))
@@ -254,7 +251,6 @@ class UI:
                   self.run_calendar.return_sum_of_runs_km(datefrom, dateto))
             _share = self.run_calendar.return_easy_run_share(datefrom, dateto)
             print(
-                f"Most of the running should be easy (type 1 runs),\
-                    share of easy running minutes in your plan, %: {_share: .1f}")
+                f"Most of the running should be easy (type 1 runs),\nshare of easy running minutes in your plan, %: {_share: .1f}")
         else:
             pass

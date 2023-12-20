@@ -44,8 +44,7 @@ class Run_repository:
             result = []
             for row in rows:
                 result.append(
-                    f"date: {row[1]}, effort: {row[2]}, duration and length:\
-                        {row[3]} min, {row[4]} km")
+                    f"date: {row[1]}, effort: {row[2]}, duration and length: {row[3]} min, {row[4]} km, {row[5]}")
             return '\n'.join(result)
 # Ending point point: the code above (4 rows) was partly created by ChatGPT
 
@@ -59,8 +58,7 @@ class Run_repository:
             result = []
             for row in rows:
                 result.append(
-                    f"date: {row[1]}, effort: {row[2]}, duration and length:\
-                        {row[3]} min, {row[4]} km")
+                    f"date: {row[1]}, effort: {row[2]}, duration and length: {row[3]} min, {row[4]} km, {row[5]}")
             return '\n'.join(result)
 # Ending point point: the code above (4 rows) was partly created by ChatGPT
 

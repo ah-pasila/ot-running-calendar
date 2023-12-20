@@ -1,13 +1,14 @@
-
-class User:
-    """Class for users of the application.
+"""Class for users of the application
 
     Attributes:
         username: username created by the user
-        password: password created by the user
+        password: password created by the user (min 8 characters)
         gender: gender of the user
         age: age of the user
-    """
+"""
+
+
+class User:
 
     def __init__(self, username: str, password: str, gender: str, age: int):
         """Constructor of the class

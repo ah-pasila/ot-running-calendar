@@ -13,3 +13,7 @@
 ### Viikko 4
 
 - Toteutettu tietokantatallennus ja pystytään palauttamaan juoksun tiedot. Ensimmäiset testit toimivat. 
+
+### Viikko 5
+
+- Käyttäjän login-toiminto käyttöön. Käyttäjälle käyttöön uusina ominaisuuksina juoksujen tilastotieto-osio ja juoksujen poistomahdollisuus. Syötteiden validointi käyttöliittymässä käyttöön.

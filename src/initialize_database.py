@@ -1,25 +1,25 @@
 from database_connection import get_database_connection
 
-"""Class for initializing database including removing tables and setting up new tables
+"""Class for initializing SQL database including removing old tables (if any) 
+    and setting up new tables for users and plans 
 """
 
 
-def drop_tables(connection):
+def _drop_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        drop table if exists users;          
+        DROP table IF EXISTS users;          
     ''')
 
     cursor.execute('''
-        drop table if exists plans;          
+        DROP table IF EXISTS plans;          
     ''')
 
     connection.commit()
 
 
-
-def create_tables(connection):
+def _create_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -37,7 +37,7 @@ def create_tables(connection):
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             day TEXT NOT NULL,
             type TEXT NOT NULL,
-            duration INT NOT NULL,
+            duration INTEGER,
             length INTEGER,
             description TEXT,
             username TEXT
@@ -47,8 +47,8 @@ def create_tables(connection):
 
 def initialize_database():
     connection = get_database_connection()
-    drop_tables(connection)
-    create_tables(connection)
+    _drop_tables(connection)
+    _create_tables(connection)
 
 
 if __name__ == "__main__":

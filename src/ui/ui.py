@@ -208,8 +208,7 @@ class UI:
 
     def _show_statistics(self):
         print("************** Running plan statistics **************")
-        _option = input(
-            "Show statistics on all future runs - enter 1 // Select time period - enter 2 // Escape - enter any other key: ")
+        _option = input("Show statistics on all future runs - enter 1 // Select time period - enter 2 // Escape - enter any other key: ")
         if _option == "1":
             print("Number of planned runs: ",
                   (self.run_calendar.return_number_of_runs("", "")))

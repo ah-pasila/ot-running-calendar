@@ -77,12 +77,12 @@ sequenceDiagram
     participant RunCalendarService
     participant UserRepository
     participant User
-    User->>Ui: "Testinimi"
+    User->>UI: "Testinimi"
     UI->>RunCalendarService: check_username("Testinimi")
     RunCalendarService->>UserRepository: check_username_exists("Testinimi")
     UserRepository-->>RunCalendarService:False
     RunCalendarService-->>UI: False
-    User->>Ui: "Testinimi", "Testisala", "f", "40"
+    User->>UI: "Testinimi", "Testisala", "f", "40"
     UI->>RunCalendarService: add_user("Testinimi","Testisala","f","40")
     RunCalendarService->>User: User("Testi","Testisala","f","40") 
     RunCalendarService->>UserRepository: add_user(User)

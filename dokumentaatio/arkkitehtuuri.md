@@ -91,9 +91,9 @@ sequenceDiagram
 
 ## Puutteita 
 
-Luokkien välisissä suhteissa riippuvuuksien injektointi jäi hieman hieman keskeneräiseksi ja epäselväksi, mutta käsittääkseni riippuvuudet repositorioista on injektoitu RunCalendarService-luokkaan, muita riippuvuuksia ei. 
+Luokkien välisissä suhteissa riippuvuuksien injektointi jäi hieman hieman keskeneräiseksi tai epäselväksi, olisiko sitä tullut tehdä laajemmin kuin repositorioiden osalta. 
 
-.env-konfiguraatiotiedosto, jonka avulla olisi vointu muuttaa sovelluksen konfiguraatioita, esim. tietokannan tallennuspaikka, jäi toteuttamatta. 
+.env-konfiguraatiotiedosto, jonka avulla olisi voinut muuttaa sovelluksen konfiguraatioita, esim. tietokannan tallennuspaikkaa, jäi toteuttamatta. 
 
 Kirjautuneena olevan käyttäjän toteutusmalli on hieman kömpelö; se perustuu uuteen User-olioon, johon kirjataan viimeksi kirjautuneen käyttäjän salasana (pois kirjautumisen yhteydessä ) Tietoa hyödynnetään mm. tallenuksissa. Käsittääkseni tämä aiheuttaa tilanteen, jossa sovelluksen käyttäjien tulee olla peräkkäisiä eli edellisen käyttäjän on kirjauduttava ulos ennen seuraavan aloittamista, jotta oikean käyttäjän tiedot tallentuvat esimerkiksi juoksujen yhteyteen.
 

@@ -37,7 +37,7 @@ Sovelluksessa on luokat [User](https://github.com/ah-pasila/ot-running-calendar/
     }
 ```
 
-Sovellustoiminnot ovat luokassa [RunCalendarService](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/services/run_calendar_service.py), joka viittaa niin User-, Plan- kuin repositorioluokkiinkin. 
+Sovellustoiminnot ovat luokassa [RunCalendarService](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/services/run_calendar_service.py), joka viittaa niin User-, Run- kuin repositorioluokkiinkin. 
 
 ## Tietojen tallennus - repositoriot
 

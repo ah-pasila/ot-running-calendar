@@ -219,8 +219,7 @@ class UI:
                   self.run_calendar.return_sum_of_runs_km("", ""))
             _share = self.run_calendar.return_easy_run_share("", "")
             print(
-                f"Most of the running should be easy (type 1 runs),\
-                    share of easy running minutes in your plan, %: {_share: .1f}")
+                f"Most of the running should be easy (type 1 runs),\nshare of easy running minutes in your plan, %: {_share: .1f}")
         elif _option == "2":
             while True:
                 try:

@@ -10,11 +10,11 @@ ChatGPT was used to find typos and problems from the code.
 from entities.user import User
 from entities.run import Run
 from repositories.user_repository import (
-    user_repository as default_user_repository
+    UserRepository as default_user_repository
 )
 
 from repositories.run_repository import (
-    run_repository as default_run_repository
+    RunRepository as default_run_repository
 )
 
 

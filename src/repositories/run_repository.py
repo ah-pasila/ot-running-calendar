@@ -6,7 +6,7 @@ ChatGPT was used to identify & solve problems related to return_all_runs printin
 from database_connection import get_database_connection
 
 
-class Run_repository:
+class RunRepository:
 
     def __init__(self, connection):
         self._connection = connection
@@ -179,4 +179,4 @@ class Run_repository:
         self._connection.commit()
 
 
-run_repository = Run_repository(get_database_connection())
+run_repository = RunRepository(get_database_connection())

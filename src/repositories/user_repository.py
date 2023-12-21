@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from database_connection import get_database_connection
 
 
-class User_repository:
+class UserRepository:
 
     def __init__(self, connection):
         """Constructor of the class, sets up the connection to the database
@@ -90,4 +90,4 @@ class User_repository:
         self._connection.commit()
 
 
-user_repository = User_repository(get_database_connection())
+user_repository = UserRepository(get_database_connection())

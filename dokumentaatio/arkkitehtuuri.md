@@ -2,15 +2,15 @@
 
 ## Rakenne
 
-Sovelluskoodi on kerrosarkkitehtuuriajattelua noudattaen jaettu pakkauksiin ui (käyttöliittymä), services (sovellustoiminnot), entities (luokat) ja repositories (tallennusratkaisut).
+Sovelluskoodi on kerrosarkkitehtuuriajattelua noudattaen jaettu pakkauksiin ui (käyttöliittymä), services (sovellustoiminnot), entities (luokat) ja repositories (tallennus- ja lukuratkaisut).
 
 Käyttöliittymä luo instanssin sovelluksesta, joka puolestaan kutsuu varsinaisia entities-luokkia ja repositories-luokkia, jotka vastaavat tiedon tallennuksesta tietokantaan ja noutamisesta. 
 
 ## Käyttöliittymä - UI
 
-Sovelluksessa on tekstipohjainen käyttöliittymä, joka on yhdessä luokassa [Ui](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/ui/ui.py). Sovellus- ja käyttöliittymätoiminnot on pyritty pitämään erillään, Ui kutsuu RunCalendarService-luokkaa. 
+Sovelluksessa on tekstipohjainen käyttöliittymä, joka on yhdessä luokassa [Ui](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/ui/ui.py). Sovellus- ja käyttöliittymätoiminnot on pyritty pitämään erillään, Ui kutsuu [RunCalendarService](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/services/run_calendar_service.py)-luokkaa. 
 
-Miinuksena rakenteen osalta se, että paljon syötteisiin liittyvää virhekäsittelyä jäi vain käyttöliittymän puolelle. Toisena isompana miinuksena maatimusmäärittelyssä tavoitteena oli toteuttaa graafinen käyttöliittymä, mikä on harmillinen puute. 
+Miinuksena rakenteen osalta se, että paljon syötteisiin liittyvää virhekäsittelyä jäi vain käyttöliittymän puolelle. Toisena isompana miinuksena vaatimusmäärittelyssä tavoitteena oli toteuttaa graafinen käyttöliittymä, mikä on harmillinen puute. 
 
 ## Luokat User ja Plan sekä sovelluslogiikka RunCalendarService
 

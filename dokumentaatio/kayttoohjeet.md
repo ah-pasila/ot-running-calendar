@@ -6,7 +6,7 @@
 ```
 git clone https://github.com/ah-pasila/ot-running-calendar/ 
 ```
-tai lataamalla tuorein kiinnitetty versio [release](https://github.com/ah-pasila/ot-running-calendar/releases) Githubista
+tai lataamalla tuorein kiinnitetty [release](https://github.com/ah-pasila/ot-running-calendar/releases) Githubista
 
 2. Siirry ohjelmakansion juureen ja aja seuraava komento komentorivillä, jotta ohjelma saa käyttöön tarvittavat riippuvuudet: 
 ```

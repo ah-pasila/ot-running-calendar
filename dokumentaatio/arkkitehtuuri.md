@@ -72,17 +72,17 @@ Sovelluksen perustoimintalogiikka on, että käyttöliittymä pyytää käyttäj
 
 ```mermaid
 sequenceDiagram
-    actor User
+    actor AppUser
     participant UI
     participant RunCalendarService
     participant UserRepository
     participant User
-    User->>UI: "Testinimi"
+    AppUser->>UI: "Testinimi"
     UI->>RunCalendarService: check_username("Testinimi")
     RunCalendarService->>UserRepository: check_username_exists("Testinimi")
     UserRepository-->>RunCalendarService:False
     RunCalendarService-->>UI: False
-    User->>UI: "Testinimi", "Testisala", "f", "40"
+    AppUser->>UI: "Testinimi", "Testisala", "f", "40"
     UI->>RunCalendarService: add_user("Testinimi","Testisala","f","40")
     RunCalendarService->>User: User("Testi","Testisala","f","40") 
     RunCalendarService->>UserRepository: add_user(User)

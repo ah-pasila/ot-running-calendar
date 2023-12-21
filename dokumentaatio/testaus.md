@@ -10,7 +10,7 @@ Alla testikattavuusraportti.
 
 ## Järjestelmätestaus
 
-Järjestelmätestaus on suoritettu manuaalisesti viimeisimmälle releasille [käyttöohjeiden](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/kayttoohjeet.md) mukaan. Testauksessa on toteutettu ohjeen mukaisia tavanomaisia toimintoja eli käyttäjän luonti, sisäänkirjautuminen, juoksun tietojen tallennus ja poisto sekä tarkastelu eri rajauksilla ja sovelluksesta poistuminen.
+Järjestelmätestaus on suoritettu manuaalisesti viimeisimmälle releasille tehtyjen [käyttöohjeiden](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/kayttoohjeet.md) mukaan. Testauksessa on toteutettu ohjeen mukaisia tavanomaisia toimintoja eli käyttäjän luonti, sisäänkirjautuminen, juoksun tietojen tallennus ja poisto sekä tarkastelu eri rajauksilla ja sovelluksesta poistuminen.
 
 ## Puutteita 
 

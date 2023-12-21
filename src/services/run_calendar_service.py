@@ -10,11 +10,11 @@ ChatGPT was used to find typos and problems from the code.
 from entities.user import User
 from entities.run import Run
 from repositories.user_repository import (
-    UserRepository as default_user_repository
+    user_repository as default_user_repository
 )
 
 from repositories.run_repository import (
-    RunRepository as default_run_repository
+    run_repository as default_run_repository
 )
 
 
@@ -71,7 +71,7 @@ class RunCalendarService:
         self.login_status = False
         self.current_user = User("", "", "", "")
 
-    def add_run(self, day: str, run_type: str, duration: str, length: int,\
+    def add_run(self, day: str, run_type: str, duration: str, length: int,
                 description: str, username: str):
         """add_run adds Run object to run database using run_repository
         """

@@ -6,7 +6,7 @@ ChatGPT was used to identify & solve problems related to return_all_runs printin
 from database_connection import get_database_connection
 
 
-class RunRepository:
+class Run_repository:
 
     def __init__(self, connection):
         self._connection = connection
@@ -14,7 +14,7 @@ class RunRepository:
         """Constructor of the class, sets up the connection to the database
         """
 
-    def add_run(self, run): 
+    def add_run(self, run):
         """add_run adds planned run to the database: day, type, 
         duration, length, description, username
         """
@@ -30,7 +30,7 @@ class RunRepository:
 
         return run
 
-    def return_all_runs(self, given_username: str, datefrom: str, dateto: str):     
+    def return_all_runs(self, given_username: str, datefrom: str, dateto: str):
         """return_all_runs prints information on user's coming runs from given period 
         or if no period is given, then all runs from today on
         """
@@ -62,7 +62,6 @@ class RunRepository:
             return '\n'.join(result)
 # Ending point point: the code above (4 rows) was partly created by ChatGPT
 
-
     def return_run_count(self, given_username: str, datefrom: str, dateto: str):
         """return_run_count returns the total number of user's runs from given period,
         or if no period is given, then all runs
@@ -80,7 +79,6 @@ class RunRepository:
                                  (given_username, datefrom, dateto,)
                                  )
             return (len(res.fetchall()))
-
 
     def return_run_count_in_db(self):
         """return_run_count returns the total number of runs in the database 
@@ -111,8 +109,7 @@ class RunRepository:
             total_sum = res.fetchone()[0]
             return total_sum
 
-
-    def return_run_sum_min_types(self, given_username: str, given_type: int, \
+    def return_run_sum_min_types(self, given_username: str, given_type: int,
                                  datefrom: str, dateto: str):
         """return_run_sum_min returns the total sum of user's running minutes 
         by run type from coming runs from given period or if no period is given, 
@@ -155,7 +152,6 @@ class RunRepository:
             total_sum = res.fetchone()[0]
             return total_sum
 
-
     def remove_run(self, given_username: str, removedate):
         """remove_run removes user's run(s) from a given day
         """
@@ -179,4 +175,4 @@ class RunRepository:
         self._connection.commit()
 
 
-run_repository = RunRepository(get_database_connection())
+run_repository = Run_repository(get_database_connection())

@@ -8,7 +8,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from database_connection import get_database_connection
 
 
-class UserRepository:
+class User_repository:
 
     def __init__(self, connection):
         """Constructor of the class, sets up the connection to the database
@@ -30,7 +30,6 @@ class UserRepository:
 
         return user
 
-
     def check_username_exists(self, given_username):
         """check_username_exists checks that given username can be found from the database
         """
@@ -43,7 +42,6 @@ class UserRepository:
             return True
         else:
             return False
-
 
     def check_password_correct(self, given_username, given_password):
         """check_password_correct checks that given username and password combination is valid
@@ -69,14 +67,12 @@ class UserRepository:
         returning_age = res.fetchone()
         return returning_age[0]
 
-
     def return_user_count(self):
         """return_user_count returns the total number of the users in the database
         """
         cursor = self._connection.cursor()
         cursor.execute("SELECT COUNT(*) FROM users")
         return (len(cursor.fetchall()))
-
 
     def remove_all_users(self):
         """remove_all_users removes all users from database
@@ -90,4 +86,4 @@ class UserRepository:
         self._connection.commit()
 
 
-user_repository = UserRepository(get_database_connection())
+user_repository = User_repository(get_database_connection())

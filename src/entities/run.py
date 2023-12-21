@@ -12,7 +12,7 @@
 
 class Run:
 
-    def __init__(self, day: str, run_type: str, duration: int,length: int, \
+    def __init__(self, day: str, run_type: str, duration: int, length: int,
                  decsription: str, username: str):
         """Constructor of the class
 

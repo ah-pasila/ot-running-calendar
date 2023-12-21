@@ -16,7 +16,9 @@ Järjestelmätestaus on suoritettu manuaalisesti viimeisimmälle releasille [kä
 
 Testaus alkoi liian myöhäisessä vaiheessa sovelluskehitystä ja jäi melko puutteelliseksi, erityisesti integraatiotestauksen osalta, jota tarvittiin RunCalendarService-luokan osalta. 
 
-Testauksen kannalta paljastui ongelmalliseksi ratkaisuksi, jättää iso osa virhekäsittelyistä (syötteeseen liittyen) käyttöliittymään, jota ei testattu.
+Testauksen kannalta paljastui ongelmalliseksi ratkaisuksi jättää iso osa virhekäsittelyistä (syötteeseen liittyen) käyttöliittymään, jota ei testattu.
+
+Myös ui-puolelle jäi validointipuutteita, ainakin yksi havaittu on se, että tyhjän käyttäjänimen tallentaminen onnistuu (tosin vain kertaluontoisesti).
 
 Testausta varten ei muodosteta testitietokantaa ei muodosteta, mikä olisi ollut hyvä. Ennen sovelluksen käyttöä tuotannossa on siis erittäin tärkeää ohjeiden mukaisesti alustaa tietokanta. Tämän tekemättä jättämisestä ei kuitenkaan sinänsä varoiteta. 
 

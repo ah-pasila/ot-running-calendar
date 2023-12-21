@@ -41,7 +41,7 @@ Sovellustoiminnot ovat luokassa [RunCalendarService](https://github.com/ah-pasil
 
 ## Tietojen tallennus - repositoriot
 
-Tietojen tallentamisesta tietokantaan vastaavat käyttäjätietojen osalta [UserRepository](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/repositories/user_repository.py) ja juoksujen osalta [RunRepository](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/repositories/run_repository.py). 
+Tietojen tallentamisesta tietokantaan vastaavat käyttäjätietojen osalta [User_repository](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/repositories/user_repository.py) ja juoksujen osalta [Run_Repository](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/repositories/run_repository.py). 
 
 Tiedot tallennetaan paikalliseen SQLite-tietokantaan. Tietokanta täytyy käyttöönoton yhteydessä alustaa [initialize_database.py](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/initialize_database.py) ja myös, jos se jostain syystä halutaan resetoida myöhemmin. Tietokanta muodostuu sovelluskansion juureen data-kansioon. 
 
@@ -75,18 +75,18 @@ sequenceDiagram
     actor AppUser
     participant UI
     participant RunCalendarService
-    participant UserRepository
+    participant User_repository
     participant User
     AppUser->>UI: "Testinimi"
     UI->>RunCalendarService: check_username("Testinimi")
-    RunCalendarService->>UserRepository: check_username_exists("Testinimi")
-    UserRepository-->>RunCalendarService:False
+    RunCalendarService->>User_repository: check_username_exists("Testinimi")
+    User_repository-->>RunCalendarService:False
     RunCalendarService-->>UI: False
     AppUser->>UI: "Testinimi", "Testisala", "f", "40"
     UI->>RunCalendarService: add_user("Testinimi","Testisala","f","40")
     RunCalendarService->>User: User("Testi","Testisala","f","40") 
-    RunCalendarService->>UserRepository: add_user(User)
-    UserRepository-->>RunCalendarService: user
+    RunCalendarService->>User_repository: add_user(User)
+    User_repository-->>RunCalendarService: user
 ```
 
 ## Puutteita 

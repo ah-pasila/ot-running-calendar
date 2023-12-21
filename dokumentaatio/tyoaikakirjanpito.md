@@ -18,10 +18,10 @@
 |12.12.|1.0|testien päivitystä kuntoon, kommenttien siistimistä|
 |13.12.|1.5|login-kirjautumisen toteutuksen aloitus|
 |15.12.|1.0|login-kirjautumisen toteutuksen jatko|
-|16.12.|5.75|login toimintaan, käyttäjälle juoksutilastot ja juoksun poisto käyttöön, turhan RunPlan-luokan poisto|
+|16.12.|5.5|login toimintaan, käyttäjälle juoksutilastot ja juoksun poisto käyttöön, turhan RunPlan-luokan poisto|
 |17.12.|4.5|Syötteen tarkistuksia käyttöön, koodin siistimistä, testien tekoa|
-|18.12.|1|Testien tekoa|
-|19.12.|1|Päivämäärien validointi, ui-siivous|
+|18.12.|1.0|Testien tekoa|
+|19.12.|1.0|Päivämäärien validointi, ui-siivous|
 |20.12.|4.5|Koodin ja tiedostojen siistimistä, kommentointia|
-|21.12.||Testit, siivousta ja dokumentaation tekoa|
-|Yhteensä|37.75|tuntia|
+|21.12.|4.0|Testit, testiraportti, siivousta ja dokumentaation tekoa|
+|Yhteensä|42.5|tuntia|

@@ -24,14 +24,14 @@ Sovelluksessa on luokat [User](https://github.com/ah-pasila/ot-running-calendar/
         String username
         String password
         String gender
-        int age
+        Int age
     }
 
     class Plan{
         String day
         String run_type
-        int duration
-        int length
+        Int duration
+        Int length
         String description
         String username
     }
@@ -64,16 +64,30 @@ description TEXT,
 username TEXT
 ```
 
-## Toiminnallisuudet
+## Toimintalogiikka
+
+Sovelluksen perustoimintalogiikka on, että käyttöliittymä pyytää käyttäjältä syötteitä ja validoi ne. Syötteet viedään eteenpäin juoksukalenterisovellusluokalle, joka edelleen kutsuu repositorioluokkia joko tietojen tallentamista ja palauttamista eli tarkistamista tai tulostamista varten. Esimerkkinä kuvattu alla sekvenssikaaviona uuden käyttäjän luominen, johon liittyy sekä tiedon tarkistamista että tallentamista. 
 
 ### Uuden käyttäjän luominen
-### Kirjautuminen
-### Juoksun luominen
+
+```mermaid
+sequenceDiagram
+    ui->>run_calendar_service: check_username("Testinimi")
+    run_calendar_service->>user_repository: check_username_exists("Testinimi")
+    user_repository-->>run_calendar_service: False
+    run_calendar_service-->>ui: False
+    ui->>run_calendar_service: add_user("Testinimi","Testisala","f","40")
+    run_calendar_service->>user: User("Testi","Testisala","f","40") 
+    run_calendar_service->>user_repository: add_user(User)
+    user_repository-->>run_calendar_service: user
+```
 
 ## Puutteita 
 
 Luokkien välisissä suhteissa riippuvuuksien injektointi jäi hieman hieman keskeneräiseksi ja epäselväksi, mutta käsittääkseni riippuvuudet repositorioista on injektoitu RunCalendarService-luokkaan, muita riippuvuuksia ei. 
 
-Alun perin tarkoitus oli luoda laajempi luokkarakenne niin, että olisi ollut olemassa vielä RunPlan-luokka, johon olisi voinut liittää harjoitusohjelmakokonaisuuksia. Tämän vuoksi nimeämisiin jäi epäyhtenäisyyttä Run ja Plan-termien välillä.
-
 .env-konfiguraatiotiedosto, jonka avulla olisi vointu muuttaa sovelluksen konfiguraatioita, esim. tietokannan tallennuspaikka, jäi toteuttamatta. 
+
+Kirjautuneena olevan käyttäjän toteutusmalli on hieman kömpelö; se perustuu uuteen User-olioon, johon kirjataan viimeksi kirjautuneen käyttäjän salasana (pois kirjautumisen yhteydessä ) Tietoa hyödynnetään mm. tallenuksissa. Käsittääkseni tämä aiheuttaa tilanteen, jossa sovelluksen käyttäjien tulee olla peräkkäisiä eli edellisen käyttäjän on kirjauduttava ulos ennen seuraavan aloittamista, jotta oikean käyttäjän tiedot tallentuvat esimerkiksi juoksujen yhteyteen.
+
+Alun perin tarkoitus oli luoda laajempi luokkarakenne niin, että olisi ollut olemassa vielä RunPlan-luokka, johon olisi voinut liittää harjoitusohjelmakokonaisuuksia. Tämän vuoksi nimeämisiin jäi epäyhtenäisyyttä Run ja Plan-termien välillä.

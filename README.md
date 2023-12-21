@@ -13,13 +13,13 @@ Linkki [vaatimusmäärittelyyn](https://github.com/ah-pasila/ot-running-calendar
 
 Linkki [arkkitehtuuridokumentaatioon](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+Linkki [testausdokumenttiin](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/testaus.md)
+
 Linkki [muutoslokiin](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/changelog.md)
 
 Linkki [työaikakirjanpitoon](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 
 ## Sovelluksen asentaminen
-
-- Huom. sovelluksen testauksessa käytetty Cubbli Linuxia ja Pythonin versiota 3.10.12, toimivuuutta muissa ympäristöissä ja muilla versioilla ei ole kokeiltu.
 
 1. Lataa ohjelmakoodi komentorivillä 
 ```
@@ -41,3 +41,4 @@ poetry run invoke initialize
 ```
 poetry run invoke start
 ```
+Huom. sovelluksen testauksessa käytetty Cubbli Linuxia ja Pythonin versiota 3.10.12, toimivuuutta muissa ympäristöissä ja muilla versioilla ei ole kokeiltu.

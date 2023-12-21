@@ -2,8 +2,6 @@
 
 ## Sovelluksen asentaminen
 
-- Huom. sovelluksen testauksessa käytetty Cubbli Linuxia ja Pythonin versiota 3.10.12, toimivuuutta muissa ympäristöissä ja muilla versioilla ei ole kokeiltu.
-
 1. Lataa ohjelmakoodi komentorivillä 
 ```
 git clone https://github.com/ah-pasila/ot-running-calendar/ 
@@ -24,6 +22,7 @@ poetry run invoke initialize
 ```
 poetry run invoke start
 ```
+Huom. sovelluksen testauksessa käytetty Cubbli Linuxia ja Pythonin versiota 3.10.12, toimivuuutta muissa ympäristöissä ja muilla versioilla ei ole kokeiltu.
 
 ## Kirjautuminen sovellukseen
 

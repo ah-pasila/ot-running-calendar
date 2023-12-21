@@ -6,7 +6,7 @@ Testeissä käytettiin unittestiä. Testausta tehtiin luokissa [TestRunCalendarS
 
 Alla testikattavuusraportti.
 
-![Coverage report]((https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/kuvat/image.png)
+[Coverage report](https://github.com/ah-pasila/ot-running-calendar/blob/master/dokumentaatio/kuvat/image.png)
 
 ## Järjestelmätestaus
 

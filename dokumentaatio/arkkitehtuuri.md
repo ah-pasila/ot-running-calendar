@@ -18,7 +18,7 @@ Sovelluksessa on luokat [User](https://github.com/ah-pasila/ot-running-calendar/
 
 ```mermaid
  classDiagram
-    User "1" -- "*" Plan
+    User "1" -- "*" Run
 
     class User{
         String username
@@ -27,7 +27,7 @@ Sovelluksessa on luokat [User](https://github.com/ah-pasila/ot-running-calendar/
         Int age
     }
 
-    class Plan{
+    class Run{
         String day
         String run_type
         Int duration

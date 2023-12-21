@@ -14,7 +14,7 @@ Miinuksena rakenteen osalta se, että paljon syötteisiin liittyvää virhekäsi
 
 ## Luokat User ja Plan sekä sovelluslogiikka RunCalendarService
 
-Sovelluksessa on luokat [User](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/entities/user.py) eli käyttäjä ja [Plan](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/entities/run.py) eli suunniteltu juoksu.
+Sovelluksessa on luokat [User](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/entities/user.py) eli käyttäjä ja [Run](https://github.com/ah-pasila/ot-running-calendar/blob/master/src/entities/run.py) eli suunniteltu juoksu.
 
 ```mermaid
  classDiagram
